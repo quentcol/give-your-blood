@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_03_01_131115) do
+ActiveRecord::Schema[7.1].define(version: 2024_03_01_131517) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -31,6 +31,12 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_01_131115) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "days", force: :cascade do |t|
+    t.string "dayname"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "patients", force: :cascade do |t|
     t.string "address"
     t.string "blood_type"
@@ -39,6 +45,17 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_01_131115) do
     t.string "last_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "schedules", force: :cascade do |t|
+    t.time "opening_time"
+    t.time "closing_time"
+    t.bigint "day_id", null: false
+    t.bigint "center_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["center_id"], name: "index_schedules_on_center_id"
+    t.index ["day_id"], name: "index_schedules_on_day_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -55,4 +72,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_01_131115) do
 
   add_foreign_key "appointments", "centers"
   add_foreign_key "appointments", "patients"
+  add_foreign_key "schedules", "centers"
+  add_foreign_key "schedules", "days"
 end
