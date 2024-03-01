@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_03_01_131517) do
+ActiveRecord::Schema[7.1].define(version: 2024_03_01_140852) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -37,7 +37,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_01_131517) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "patients", force: :cascade do |t|
+  create_table "donors", force: :cascade do |t|
     t.string "address"
     t.string "blood_type"
     t.date "birthdate"
@@ -71,7 +71,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_01_131517) do
   end
 
   add_foreign_key "appointments", "centers"
-  add_foreign_key "appointments", "patients"
+  add_foreign_key "appointments", "donors", column: "patient_id"
   add_foreign_key "schedules", "centers"
   add_foreign_key "schedules", "days"
 end
