@@ -1,0 +1,6 @@
+<h1>All Days</h1>
+<ul>
+  <% @days.each do |day| %>
+    <li><%= link_to day.name, day %></li>
+  <% end %>
+</ul>

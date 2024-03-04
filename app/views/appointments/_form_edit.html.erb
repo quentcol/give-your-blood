@@ -1,0 +1,26 @@
+<%= simple_form_for(@appointment, url: appointment_path(@appointment), method: "patch") do |form| %>
+  <% if appointment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(appointment.errors.count, "error") %> prohibited this appointment from being saved:</h2>
+      <ul>
+      <% appointment.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= form.input :appointment_date, label: "Appointment Date", input_html: { class: "form-control" } %>
+
+  <%= form.input :appointment_time, label: "Appointment Time", input_html: { class: "form-control" } %>
+
+  <%= form.input :person_in_charge, label: "Person in Charge", input_html: { class: "form-control" } %>
+
+  <%= form.input :patient_id, label: "Patient", collection: Patient.all.map { |patient| [patient.first_name, patient.last_name, patient.id] }, include_blank: false, input_html: { class: "form-control" } %>
+
+  <%= form.input :status, label: "Status", input_html: { class: "form-control" } %>
+
+  <div class="actions">
+    <%= form.button :submit, "Save", class: "btn btn-primary" %>
+  </div>
+<% end %>

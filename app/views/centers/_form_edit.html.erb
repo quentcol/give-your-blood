@@ -1,0 +1,26 @@
+<%= simple_form_for(center, url: center_path(center), method: "patch") do |form| %>
+  <% if center.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(center.errors.count, "error") %> prohibited this center from being saved:</h2>
+      <ul>
+        <% center.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :address, "Address" %>
+    <%= form.text_field :address, class: "form-control" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :hospital_id, "Hospital" %>
+    <%= form.collection_select :hospital_id, Hospital.all, :id, :hospital_name, { include_blank: true }, class: "form-control" %>
+  </div>
+
+  <div class="actions">
+    <%= form.button :submit, "Save", class: "btn btn-primary" %>
+  </div>
+<% end %>
