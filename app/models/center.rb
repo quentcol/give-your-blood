@@ -1,5 +1,6 @@
 class Center < ApplicationRecord
-  belongs_to :user
-  has_many :appointment
-  has_one :schedule
+  belongs_to :hospital
+  has_many :reviews
+  has_many :schedules
+  has_many :appointments
 end
