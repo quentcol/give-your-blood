@@ -1,0 +1,21 @@
+<%= form_with(model: appointment, url: appointments_path, method: "post") do |form| %>
+
+  <%= form.label :appointment_date, "Appointment Date" %>
+  <%= form.date_field :appointment_date, class: "form-control" %>
+
+  <%= form.label :appointment_time, "Appointment Time" %>
+  <%= form.time_field :appointment_time, class: "form-control" %>
+
+  <%= form.label :person_in_charge, "Person in Charge" %>
+  <%= form.text_field :person_in_charge, class: "form-control" %>
+
+  <%= form.label :patient_id, "Patient" %>
+  <%= form.collection_select :patient_id, Patient.all, :id, :last_name, { prompt: "Select Patient" }, { class: "form-control" } %>
+  
+  <%= form.label :status, "Status" %>
+  <%= form.text_field :status, class: "form-control" %>
+
+  <div class="actions">
+    <%= form.submit "Save", class: "btn btn-primary" %>
+  </div>
+<% end %>

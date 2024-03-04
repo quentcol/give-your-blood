@@ -1,3 +1,6 @@
 class Center < ApplicationRecord
-  has_one :address
+  belongs_to :hospital
+  has_many :reviews
+  has_many :schedules
+  has_many :appointments
 end

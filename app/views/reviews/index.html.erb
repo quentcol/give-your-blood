@@ -1,0 +1,8 @@
+<h1>Reviews for <%= @center.name %></h1>
+
+<% @reviews.each do |review| %>
+  <div class="review">
+    <h3>Rating: <%= review.rating %></h3>
+    <p><%= review.review_content %></p>
+  </div>
+<% end %>
