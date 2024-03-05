@@ -33,7 +33,7 @@ center_3 = { address: "Lijnbaan 32", name: "Hagaziekenhuis"}
 #create center
 [center_1, center_2, center_3].each do |info|
   center = Center.create!(info)
-  puts "created #{center.adress}"
+  puts "created #{center.address}"
 end
 
 puts 'Created centers!'
