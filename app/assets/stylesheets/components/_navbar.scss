@@ -1,6 +1,7 @@
 .navbar-lewagon {
   display: flex;
   justify-content: space-between;
+  
   background: #F6EBE7;
 }
 
@@ -52,4 +53,22 @@
     flex-wrap: inherit;
     align-items: center;
     justify-content: center;
+}
+
+.avatar {
+  justify-content: right;
+}
+
+.title {
+  color: rgb(183, 8, 8);
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 900;
+}
+
+ .navbar-lewagon {
+  color:black;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 700;
+  display: flex;
+ justify-content: center;
 }
