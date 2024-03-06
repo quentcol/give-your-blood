@@ -1,6 +1,6 @@
-class CreateDoners < ActiveRecord::Migration[7.1]
+class CreateDonors < ActiveRecord::Migration[7.1]
   def change
-    create_table :doners do |t|
+    create_table :donors do |t|
       t.references :user, foreign_key: true
       t.string :address
       t.string :blood_type

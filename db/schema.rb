@@ -18,13 +18,13 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_05_174516) do
     t.date "appointment_date"
     t.time "appointment_time"
     t.string "person_in_charge"
-    t.bigint "doner_id", null: false
+    t.bigint "donor_id", null: false
     t.string "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "center_id"
     t.index ["center_id"], name: "index_appointments_on_center_id"
-    t.index ["doner_id"], name: "index_appointments_on_doner_id"
+    t.index ["donor_id"], name: "index_appointments_on_donor_id"
   end
 
   create_table "centers", force: :cascade do |t|
@@ -42,7 +42,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_05_174516) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "doners", force: :cascade do |t|
+  create_table "donors", force: :cascade do |t|
     t.bigint "user_id"
     t.string "address"
     t.string "blood_type"
@@ -52,7 +52,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_05_174516) do
     t.string "national_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_doners_on_user_id"
+    t.index ["user_id"], name: "index_donors_on_user_id"
   end
 
   create_table "hospitals", force: :cascade do |t|
@@ -65,13 +65,13 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_05_174516) do
 
   create_table "reviews", force: :cascade do |t|
     t.bigint "center_id", null: false
-    t.bigint "doner_id", null: false
+    t.bigint "donor_id", null: false
     t.float "rating"
     t.text "review_content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["center_id"], name: "index_reviews_on_center_id"
-    t.index ["doner_id"], name: "index_reviews_on_doner_id"
+    t.index ["donor_id"], name: "index_reviews_on_donor_id"
   end
 
   create_table "schedules", force: :cascade do |t|
@@ -98,12 +98,12 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_05_174516) do
   end
 
   add_foreign_key "appointments", "centers"
-  add_foreign_key "appointments", "doners"
+  add_foreign_key "appointments", "donors"
   add_foreign_key "centers", "hospitals"
-  add_foreign_key "doners", "users"
+  add_foreign_key "donors", "users"
   add_foreign_key "hospitals", "users"
   add_foreign_key "reviews", "centers"
-  add_foreign_key "reviews", "doners"
+  add_foreign_key "reviews", "donors"
   add_foreign_key "schedules", "centers"
   add_foreign_key "schedules", "days"
 end

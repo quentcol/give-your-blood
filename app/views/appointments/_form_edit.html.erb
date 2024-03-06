@@ -16,7 +16,7 @@
 
   <%= form.input :person_in_charge, label: "Person in Charge", input_html: { class: "form-control" } %>
 
-  <%= form.input :patient_id, label: "Patient", collection: Patient.all.map { |patient| [patient.first_name, patient.last_name, patient.id] }, include_blank: false, input_html: { class: "form-control" } %>
+  <%= form.input :donor_id, label: "donor", collection: Donor.all.map { |donor| [donor.first_name, donor.last_name, donor.id] }, include_blank: false, input_html: { class: "form-control" } %>
 
   <%= form.input :status, label: "Status", input_html: { class: "form-control" } %>
 
