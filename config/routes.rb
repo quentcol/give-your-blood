@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
   resources :hospitals
-  resources :patients
+  resources :donors
   resources :centers
   resources :appointments
   resources :centers do

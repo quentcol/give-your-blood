@@ -32,7 +32,7 @@ class ReviewsController < ApplicationController
 
 
     def review_params
-      params.require(:review).permit(:rating, :review_content).merge(patient_id: current_patient.id)
+      params.require(:review).permit(:rating, :review_content).merge(donor_id: current_donor.id)
     end
 end
 

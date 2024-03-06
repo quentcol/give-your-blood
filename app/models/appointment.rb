@@ -1,4 +1,4 @@
 class Appointment < ApplicationRecord
-  belongs_to :doner
+  belongs_to :donor
   belongs_to :center
 end

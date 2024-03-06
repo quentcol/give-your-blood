@@ -6,7 +6,7 @@
       <th>Date</th>
       <th>Time</th>
       <th>Person in Charge</th>
-      <th>Patient</th>
+      <th>Donor</th>
       <th>Status</th>
       <th colspan="3"></th>
     </tr>
@@ -18,7 +18,7 @@
         <td><%= appointment.appointment_date %></td>
         <td><%= appointment.appointment_time %></td>
         <td><%= appointment.person_in_charge %></td>
-        <td><%= appointment.patient.full_name %></td>
+        <td><%= appointment.donor.full_name %></td>
         <td><%= appointment.status %></td>
         <td><%= link_to 'Show', appointment %></td>
         <td><%= link_to 'Edit', edit_appointment_path(appointment) %></td>

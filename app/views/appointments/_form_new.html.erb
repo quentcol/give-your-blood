@@ -9,8 +9,8 @@
   <%= form.label :person_in_charge, "Person in Charge" %>
   <%= form.text_field :person_in_charge, class: "form-control" %>
 
-  <%= form.label :patient_id, "Patient" %>
-  <%= form.collection_select :patient_id, Patient.all, :id, :last_name, { prompt: "Select Patient" }, { class: "form-control" } %>
+  <%= form.label :doner_id, "donor" %>
+  <%= form.collection_select :donor_id, Donor.all, :id, :last_name, { prompt: "Select donor" }, { class: "form-control" } %>
   
   <%= form.label :status, "Status" %>
   <%= form.text_field :status, class: "form-control" %>
