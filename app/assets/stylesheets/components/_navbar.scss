@@ -1,6 +1,6 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background:#FAEBD7;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -9,4 +9,22 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+
+.avatar {
+  justify-content: right;
+}
+
+.title {
+  color: rgb(183, 8, 8);
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 900;
+}
+
+ .navbar-lewagon {
+  color:black;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 700;
+  display: flex;
+ justify-content: center;
 }
