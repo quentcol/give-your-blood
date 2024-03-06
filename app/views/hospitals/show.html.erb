@@ -1,0 +1,8 @@
+<h1><%= @hospital.hospital_name %></h1>
+
+<%= link_to 'Edit', edit_hospital_path(@hospital), class: 'btn btn-primary' %>
+<%= link_to 'Back', hospitals_path, class: 'btn btn-secondary' %>
+<%= link_to "Delete",
+  hospital_path(@hospital), class: 'btn btn-secondary',
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?" }
+%>

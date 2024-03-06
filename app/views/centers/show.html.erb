@@ -1,0 +1,12 @@
+<p>
+  <strong>Address:</strong>
+  <%= @center.address %>
+</p>
+
+<p>
+  <strong>Hospital:</strong>
+  <%= @center.hospital.hospital_name %>
+</p>
+
+<%= link_to 'Edit', edit_center_path(@center) %> |
+<%= link_to 'Back', centers_path %>
