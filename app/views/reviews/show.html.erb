@@ -1,0 +1,10 @@
+<h1>Review for <%= @center.name %></h1>
+
+<div class="review">
+  <h3>Rating: <%= @review.rating %></h3>
+  <p><%= @review.review_content %></p>
+</div>
+
+<%= link_to 'Edit Review', edit_center_review_path(@center, @review) %>
+<%= link_to 'Delete Review', center_review_path(@center, @review), method: :delete, data: { confirm: 'Are you sure?' } %>
+<%= link_to 'Back', center_reviews_path(@center) %>

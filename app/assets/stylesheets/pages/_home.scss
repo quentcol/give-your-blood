@@ -34,8 +34,9 @@ body {
 }
 .title-p{
   color: #F6EBE7;
-  font-family: "Josefin Sans", sans-serif;
-  font-weight: 900;
+  font-family: "Syne", sans-serif;
+  font-weight: 100;
+  font-size: 20px;
   margin-top: 20px;
   margin-bottom: 20px;
   text-align: center;
@@ -56,8 +57,8 @@ body {
 .background-picture h2{
   color:#F6EBE7;
   font-size: 4rem;
-  font-family: "Josefin Sans", sans-serif;
-  font-weight: 900;
+  font-family: "Gasoek one", sans-serif;
+  font-weight: 100;
   margin-bottom: 20px;
   text-align: left;
   margin-bottom: auto;
@@ -69,8 +70,8 @@ body {
 
 .title-h2{
   color: #CD0E0E;
-  font-family: "Josefin Sans", sans-serif;
-  font-weight: 900;
+  font-family: "Gasoek one", sans-serif;
+  font-weight: 100;
   margin-top: 20px;
   margin-bottom: 20px;
   text-align: center;
@@ -104,20 +105,20 @@ body {
   border: none;
 }
 
-  .card-css{
-    box-sizing: border-box;
-    height:auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    justify-content: space-between;
-    margin-right: 50px;
-    }
+.card-css{
+  box-sizing: border-box;
+  height:auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  justify-content: space-between;
+  margin-right: 50px;
+  }
 
 .card-btn{
   background:rgb(183, 8, 8);
   color:white;
-  font-family: "Josefin Sans", sans-serif;
-  font-weight: 600;
+  font-family: "Hedvig", sans-serif;
+  font-weight: 300;
   height: 50%;
   margin-bottom: 10px;
   text-align: center;
@@ -128,6 +129,10 @@ body {
   padding-left: 5px;
   }
 
-  .card-btn:hover {
-    background-color: rgba(80, 2, 2, 0.8);
+.card-btn:hover {
+  background-color: rgba(80, 2, 2, 0.8);
+  }
+
+  .phrase {
+    font-family: "Syne", sans-serif;
   }

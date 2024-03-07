@@ -1,0 +1,10 @@
+<h1>Donors</h1>
+<ul>
+  <% @donors.each do |donor| %>
+    <% if donor %>
+      <li><%= link_to "#{donor.first_name} #{donor.last_name}", donor %></li>
+    <% else %>
+      <li>No donor record found.</li>
+    <% end %>
+  <% end %>
+</ul>
