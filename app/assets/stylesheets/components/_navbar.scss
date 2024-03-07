@@ -1,14 +1,58 @@
 .navbar-lewagon {
+  display: flex;
   justify-content: space-between;
-  background:#FAEBD7;
+  font-family: "Syne", sans-serif;
+  background: #F6EBE7;
+}
+
+.navbar-left,
+.navbar-right {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-left .navbar-nav,
+.navbar-right .navbar-nav {
+  display: flex;
+  gap: 50px;
 }
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.navbar-lewagon .navbar-brand {
+  margin-right: 0;
+}
+
+.navbar-middle {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-brand {
+  font-size: 22px;
+  font-weight: bold;
+  color: #CD0E0E;
+  font-family: 'Gasoek One', cursive;
+}
+
+.logo-txt {
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.navbar > .container,
+.navbar > .container-fluid,
+.navbar > .container-sm,
+.navbar > .container-md,
+.navbar > .container-lg,
+.navbar > .container-xl,
+.navbar > .container-xxl {
+    display: flex;
+    flex-wrap: inherit;
+    align-items: center;
+    justify-content: center;
 }
 
 .avatar {
@@ -16,15 +60,7 @@
 }
 
 .title {
-  color: rgb(183, 8, 8);
-  font-family: "Josefin Sans", sans-serif;
+  color: #CD0E0E;
+  font-family: "Syne", sans-serif;
   font-weight: 900;
-}
-
- .navbar-lewagon {
-  color:black;
-  font-family: "Josefin Sans", sans-serif;
-  font-weight: 700;
-  display: flex;
- justify-content: center;
 }
