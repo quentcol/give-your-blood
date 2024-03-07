@@ -1,7 +1,7 @@
 .navbar-lewagon {
   display: flex;
   justify-content: space-between;
-
+  font-family: "Syne", sans-serif;
   background: #F6EBE7;
 }
 
@@ -60,24 +60,7 @@
 }
 
 .title {
-  color: rgb(183, 8, 8);
-  font-family: "Josefin Sans", sans-serif;
+  color: #CD0E0E;
+  font-family: "Syne", sans-serif;
   font-weight: 900;
 }
-
- .navbar-lewagon {
-  color:black;
-  font-family: "Josefin Sans", sans-serif;
-  font-weight: 700;
-  display: flex;
- justify-content: center;
-}
-.avatar {
-  justify-content: right;
-}
-
-.title {
-  color: rgb(183, 8, 8);
-    font-family: "Josefin Sans", sans-serif;
-    font-weight: 700;
-  }
