@@ -24,7 +24,7 @@
     <%= form.label :closing_time %>
     <%= form.time_select :closing_time, { minute_step: 15 }, { class: "form-control" } %>
   </div>
-
+  
   <div class="field">
     <%= form.label :center_id %>
     <%= form.collection_select :center_id, Center.all, :id, :name, { include_blank: 'Select a center' }, { class: "form-control" } %>

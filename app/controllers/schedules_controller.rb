@@ -21,13 +21,10 @@ class SchedulesController < ApplicationController
 
   def create
     @schedule = Schedule.new(schedule_params)
-  
-    respond_to do |format|
-      if @schedule.save
-        format.turbo_stream { redirect_to @schedule, notice: 'Schedule was successfully created.' }
-      else
-        format.turbo_stream { render :new }
-      end
+    if @schedule.save
+      redirect_to schedule_path(@schedule), notice: 'Schedule was successfully created.'
+    else
+      render :new
     end
   end
 

@@ -37,3 +37,9 @@ center_3 = { address: "Lijnbaan 32", name: "Hagaziekenhuis"}
 end
 
 puts 'Created centers!'
+weekdays = %w[Monday Tuesday Wednesday Thursday Friday Saturday]
+
+# Iterate over each weekday and create a corresponding record in the 'days' table
+weekdays.each do |day_name|
+  Day.create(name: day_name)
+end

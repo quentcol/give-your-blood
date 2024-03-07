@@ -1,1 +1,142 @@
 // Specific CSS for your home-page
+body {
+  background-color: #F6EBE7;
+  margin: auto;
+}
+
+.container-fluid{
+  padding: 0;
+}
+
+.title-home, .input-group {
+  padding-left: 10px;
+}
+
+
+#button-addon2 {
+  background:#F6EBE7;
+  color:#CD0E0E;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border: none;
+}
+
+#button-addon2:hover {
+  background:#CD0E0E;
+  color:#F6EBE7;
+}
+.form-control {
+  border:#F6EBE7;
+  background-color:rgba(43, 13, 13, 0.196);
+  opacity: 1;
+  filter:(opacity=50);
+  border: solid 1px #F6EBE7;
+}
+.title-p{
+  color: #F6EBE7;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 900;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  padding-left: 10px;
+}
+
+.background-picture {
+  background-image: url("https://images.unsplash.com/photo-1615461066159-fea0960485d5?q=80&w=2032&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  width: auto;
+  height: 80vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.background-picture h2{
+  color:#F6EBE7;
+  font-size: 4rem;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 900;
+  margin-bottom: 20px;
+  text-align: left;
+  margin-bottom: auto;
+}
+
+  .button-Postal:hover {
+    background-color: rgba(80, 2, 2, 0.8);
+}
+
+.title-h2{
+  color: #CD0E0E;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 900;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+
+}
+
+.title-article{
+  color: rgb(183, 8, 8);
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 900;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.phrase{
+  color: black;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 700;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  text-size-adjust: 20px;
+}
+
+.card{
+  display: flex;
+  flex-direction: row;
+  background-color: #F6EBE7;
+  margin-bottom: 30px;
+  padding: 20px;
+  border: none;
+}
+
+  .card-css{
+    box-sizing: border-box;
+    height:auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    justify-content: space-between;
+    margin-right: 50px;
+    }
+
+.card-btn{
+  background:rgb(183, 8, 8);
+  color:white;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 600;
+  height: 50%;
+  margin-bottom: 10px;
+  text-align: center;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  padding-left: 5px;
+  }
+
+  .card-btn:hover {
+    background-color: rgba(80, 2, 2, 0.8);
+  }
+
+  .footer {
+    background-color: #CD0E0E;
+    color:#F6EBE7;
+    font-family: "Josefin Sans", sans-serif;
+    font-weight: 900;
+    padding: 5px;
+    font-size: 20px;
+  }

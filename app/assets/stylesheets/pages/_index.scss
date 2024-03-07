@@ -1,1 +1,28 @@
+.card {
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
 
+  &:hover {
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  &__section {
+    padding: 20px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+
+    .card__title {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .card__body {
+      font-size: 16px;
+      color: #666;
+    }
+  }
+}

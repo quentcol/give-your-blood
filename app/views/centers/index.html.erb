@@ -22,6 +22,18 @@
   </tbody>
 </table>
 
+<div class="row">
+  <% #@centers.each do |center| %>
+    <div class="card">
+      <div class="card__section">
+        <p class="card__title"><%= center.name %></p>
+        <p class="card__body"><%= center.address %></p>
+        <%= link_to 'Book an appointment', appointments_path, class: 'button alt' %>
+      </div>
+    </div>
+  <% #end %>
+</div>
+
 <br>
 
 <%= link_to 'New Center', new_center_path %>
