@@ -38,12 +38,6 @@ appointments = [
   { donor_id: Donor.fourth.id, schedule_id: Schedule.first.id }
 ]
 Appointment.create(appointments)
-#
-# Example:
-#
-#   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
-#     MovieGenre.find_or_create_by!(name: genre_name)
-#   end
 
 weekdays = %w[Monday Tuesday Wednesday Thursday Friday Saturday]
 
