@@ -24,6 +24,7 @@ donor_3 = { user: user_3, first_name: 'Robin', last_name: "Gerritsen", blood_typ
   donor = Donor.create!(info)
   puts "created #{donor.first_name}"
 end
+
 puts "creating hospitals"
 hospital_1 = Hospital.create!({ user: user_1, hospital_name: 'General Hospital' })
 hospital_2 = Hospital.create!({ user: user_2, hospital_name: 'Children Hospital' })
@@ -38,6 +39,7 @@ puts "creating days"
 weekdays = %w[Monday Tuesday Wednesday Thursday Friday Saturday]
 
 weekdays.each do |day_name|
+  
   Day.create!(name: day_name)
 end
 
@@ -52,3 +54,4 @@ appointment_2 = Appointment.create!({ donor_id: Donor.second.id, center_id: cent
 appointment_3 = Appointment.create!({ donor_id: Donor.third.id, center_id: center_3.id })
 
 puts "seeds done!"
+

@@ -3,6 +3,7 @@
 <table>
   <thead>
     <tr>
+      <th>Name</th>
       <th>Address</th>
       <th>Hospital</th>
       <th colspan="3"></th>
@@ -12,11 +13,12 @@
   <tbody>
     <% @centers.each do |center| %>
       <tr>
+        <td><%= center.name %></td>
         <td><%= center.address %></td>
         <td><%= center.hospital.hospital_name %></td>
         <td><%= link_to 'Show', center %></td>
         <td><%= link_to 'Edit', edit_center_path(center) %></td>
-        <td><%= link_to 'Destroy', center, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to "See Reviews", center_reviews_path(center) %></td>
       </tr>
     <% end %>
   </tbody>
