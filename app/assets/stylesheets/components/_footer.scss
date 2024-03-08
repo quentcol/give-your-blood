@@ -1,8 +1,12 @@
 .footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
   background-color: #CD0E0E;
-  color:#F6EBE7;
+  color: #F6EBE7;
   font-family: "Gasoek one", sans-serif;
   padding: 5px;
   font-size: 20px;
-  font-weight: 75;
+  font-weight: 400;
 }

@@ -1,14 +1,9 @@
 <%= simple_form_for(center, url: center_path(center), method: "patch") do |form| %>
-  <% if center.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(center.errors.count, "error") %> prohibited this center from being saved:</h2>
-      <ul>
-        <% center.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+
+  <div class="field">
+    <%= form.label :name, "Name" %>
+    <%= form.text_field :name, class: "form-control" %>
+  </div>
 
   <div class="field">
     <%= form.label :address, "Address" %>

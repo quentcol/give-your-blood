@@ -18,10 +18,7 @@
         <td><%= center.hospital.hospital_name %></td>
         <td><%= link_to 'Show', center %></td>
         <td><%= link_to 'Edit', edit_center_path(center) %></td>
-        <td><%= link_to "Delete",
-          centers_path(@center), class: 'btn btn-secondary',
-          data: {turbo_method: :delete, turbo_confirm: "Are you sure?" }
-        %></td>
+        <td><%= link_to "See Reviews", center_reviews_path(center) %></td>
       </tr>
     <% end %>
   </tbody>

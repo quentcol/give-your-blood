@@ -15,7 +15,7 @@
     <%= form.label :hospital_id, "Hospital" %>
     <%= form.collection_select :hospital_id, Hospital.all, :id, :hospital_name, { include_blank: true }, class: "form-control" %>
   </div>
-  raise
+
   <div class="actions">
     <%= form.button :submit, "Save", class: "btn btn-primary" %>
   </div>
