@@ -12,6 +12,7 @@ class SchedulesController < ApplicationController
 
   def new
     @schedule = Schedule.new
+    @centers = Center.all
   end
 
 

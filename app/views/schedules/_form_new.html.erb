@@ -1,15 +1,4 @@
 <%= simple_form_for(@schedule) do |form| %>
-  <% if @schedule.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@schedule.errors.count, "error") %> prohibited this schedule from being saved:</h2>
-      <ul>
-        <% @schedule.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
   <div class="field">
     <%= form.label :day_id %>
     <%= form.collection_select :day_id, Day.all, :id, :name, { include_blank: 'Select a day' }, { class: "form-control" } %>

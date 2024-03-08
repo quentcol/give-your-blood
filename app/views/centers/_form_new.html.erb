@@ -1,5 +1,11 @@
 <%= simple_form_for(center, url: centers_path, method: "post") do |form| %>
 
+
+  <div class="field">
+    <%= form.label :name, "Name" %>
+    <%= form.text_field :name, class: "form-control" %>
+  </div>
+
   <div class="field">
     <%= form.label :address, "Address" %>
     <%= form.text_field :address, class: "form-control" %>
