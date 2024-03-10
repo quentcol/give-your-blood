@@ -1,39 +1,23 @@
 <h1>Centers</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Address</th>
-      <th>Hospital</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+<div class="index-container">
+  <div class="row">
     <% @centers.each do |center| %>
-      <tr>
-        <td><%= center.address %></td>
-        <td><%= center.hospital.hospital_name %></td>
-        <td><%= link_to 'Show', center %></td>
-        <td><%= link_to 'Edit', edit_center_path(center) %></td>
-        <td><%= link_to 'Destroy', center, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<div class="row">
-  <% #@centers.each do |center| %>
-    <div class="card">
-      <div class="card__section">
-        <p class="card__title"><%= center.name %></p>
-        <p class="card__body"><%= center.address %></p>
-        <%= link_to 'Book an appointment', appointments_path, class: 'button alt' %>
+      <div class="card">
+        <div class="card__section">
+          <p class="card__title"><%= center.name %></p>
+          <p class="card__body"><%= center.address %></p>
+          <%= link_to 'Book an appointment', appointments_path, class: 'button alt' %>
+        </div>
       </div>
-    </div>
-  <% #end %>
+    <% end %>
+  </div>
+
+  <div data-controller="map"
+    style="width: 60%; height: 600px;"
+    id='map'
+    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
+    data-controller="map"
+    data-map-markers-value="<%= @markers.to_json %>"
+    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
 </div>
-
-<br>
-
-<%= link_to 'New Center', new_center_path %>

@@ -22,12 +22,33 @@
 
 #puts 'created patient!'
 
-#center_data
+#create user
+
+Center.delete_all
+Hospital.delete_all
+User.delete_all
+
+
+user_1 = {email: 'host-a@host.com', password: 'password123' }
+user_2 = { email: 'host-b@host.com', password: 'password12' }
+
+[user_1, user_2].each do |info|
+  user = User.create!(info)
+  puts "created #{user.email}"
+end
+
+hospital_1 = { hospital_name: "Hagaziekenhuis", user_id: "#{User.first.id}" }
+hospital_2 = { hospital_name: "LUMC", user_id: "#{User.first.id}" }
+
+[hospital_1, hospital_2].each do |info|
+  hospital = Hospital.create!(info)
+  puts "created #{hospital.hospital_name}"
+end
 
 #center data
-center_1 = { address: "Maasstadweg 21", name: "Maasstad hospital" }
-center_2 = { address: "Reinier de Graafweg 1", name: "Reinier de graaf hospital" }
-center_3 = { address: "Lijnbaan 32", name: "Hagaziekenhuis"}
+center_1 = { address: "Maasstadweg 21", name: "Maasstad hospital", hospital_id: "#{Hospital.first.id}" }
+center_2 = { address: "Reinier de Graafweg 1", name: "Reinier de graaf hospital", hospital_id: "#{Hospital.first.id}" }
+center_3 = { address: "Lijnbaan 32", name: "Hagaziekenhuis", hospital_id: "#{Hospital.first.id}" }
 
 
 #create center
