@@ -6,3 +6,6 @@
     <p><%= review.review_content %></p>
   </div>
 <% end %>
+
+<%= link_to "Add Review", new_center_review_path(@center) %>
+<%= link_to 'Back', centers_path %>
