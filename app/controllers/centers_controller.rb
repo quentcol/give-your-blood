@@ -3,6 +3,12 @@ class CentersController < ApplicationController
 
   def index
     @centers = Center.all
+    @markers = @centers.geocoded.map do |center|
+      {
+        lat: center.latitude,
+        lng: center.longitude
+      }
+    end
   end
 
   def show
@@ -47,4 +53,3 @@ class CentersController < ApplicationController
     params.require(:center).permit(:address, :name, :hospital_id)
   end
 end
-

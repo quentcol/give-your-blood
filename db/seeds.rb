@@ -54,4 +54,3 @@ appointment_2 = Appointment.create!({ donor_id: Donor.second.id, center_id: cent
 appointment_3 = Appointment.create!({ donor_id: Donor.third.id, center_id: center_3.id })
 
 puts "seeds done!"
-

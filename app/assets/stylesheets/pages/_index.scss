@@ -1,2 +1,69 @@
-// Import page-specific CSS files here.
 @import "home";
+
+h1 {
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 68px;
+  color: #CD0E0E;
+  font-family: 'Gasoek One', cursive;
+
+}
+
+.index-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+#map {
+  width: 80%;
+  height: 600px;
+  margin-right: 500px;
+  border-radius: 20px;
+}
+.card h1 {
+  justify-content: flex-end;
+  margin-bottom: 20px;
+}
+
+.card__section {
+  padding: 20px;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  max-width: calc(100% - 40px);
+  margin-left: 60px;
+}
+.card__title {
+  font-weight: bold;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.card__body {
+  font-size: 14px;
+  color: #666;
+}
+
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  background-color: #CD0E0E;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, transform 0.2s ease-in-out;
+  outline: none;
+}
+
+.button:hover {
+  background-color: white;
+  color: #CD0E0E;
+  transform: scale(1.05);
+}
