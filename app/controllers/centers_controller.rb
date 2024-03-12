@@ -39,8 +39,9 @@ class CentersController < ApplicationController
   end
 
   def destroy
+    raise
     @center.destroy
-    redirect_to centers_url, notice: 'Center was successfully destroyed.'
+    redirect_to @center, notice: 'Center was successfully destroyed.'
   end
 
   private

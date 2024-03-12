@@ -1,29 +1,26 @@
-<%= simple_form_for(@donor, url: donor_path(@donor), method: "patch") do |form| %>
-    <% if @donor.errors.any? %>
-      <div id="error_explanation">
-        <h2><%= pluralize(@donor.errors.count, "error") %> prohibited this donor from being saved:</h2>
-        <ul>
-        <% @donor.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-        </ul>
-      </div>
-    <% end %>
+<div class="container" style="padding: 50px;">
+  <%= form_with(model: @donor, url: donors_path, method: "patch") do |form| %>
 
-    <%= form.input :first_name, label: "First Name", input_html: { class: "form-control" } %>
+    <%= form.label :first_name, "First Name" %>
+    <%= form.text_field :first_name, class: "form-control" %>
 
-    <%= form.input :last_name, label: "Last Name", input_html: { class: "form-control" } %>
+    <%= form.label :last_name, "Last Name" %>
+    <%= form.text_field :last_name, class: "form-control" %>
 
-    <%= form.input :address, label: "Address", input_html: { class: "form-control" } %>
+    <%= form.label :address, "Address" %>
+    <%= form.text_area :address, class: "form-control" %>
 
-    <%= form.input :blood_type, label: "Blood Type", input_html: { class: "form-control" } %>
+    <%= form.label :blood_type, "Blood Type" %>
+    <%= form.text_field :blood_type, class: "form-control" %>
 
-    <%= form.input :birthdate, label: "Birthdate", input_html: { class: "form-control" } %>
+    <%= form.label :birthdate, "Birthdate" %>
+    <%= form.date_field :birthdate, class: "form-control" %>
 
-    <%= form.input :national_id, label: "National ID", input_html: { class: "form-control" } %>
+    <%= form.label :national_id, "National ID" %>
+    <%= form.text_field :national_id, class: "form-control" %>
 
     <div class="actions">
-      <%= form.button :submit, "Save", class: "btn btn-primary" %>
+      <%= form.button :submit, class: "btn-link" %>
     </div>
   <% end %>
 </div>
