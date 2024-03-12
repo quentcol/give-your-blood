@@ -11,9 +11,9 @@ User.delete_all
 Day.delete_all
 
 puts "creating users"
-user_1 = User.create!({ email: 'host-a@host.com', password: 'password123' })
-user_2 = User.create!({ email: 'host-b1@host.com', password: 'password12' })
-user_3 = User.create!({ email: 'host-b2@host.com', password: 'password1234' })
+user_1 = User.create!({ email: 'host-a@host.com', password: 'password123', category: 'donor' })
+user_2 = User.create!({ email: 'host-b1@host.com', password: 'password12', category: 'donor' })
+user_3 = User.create!({ email: 'host-b2@host.com', password: 'password1234', category: 'hospital' })
 
 puts "creating donors"
 donor_1 = { user: user_1, first_name: 'Iheb', last_name: "Laib", blood_type: 'A+', address: 'New York', birthdate: '1995-01-01' }
@@ -39,7 +39,7 @@ puts "creating days"
 weekdays = %w[Monday Tuesday Wednesday Thursday Friday Saturday]
 
 weekdays.each do |day_name|
-  
+
   Day.create!(name: day_name)
 end
 
