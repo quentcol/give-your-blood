@@ -4,7 +4,11 @@ class DonorsController < ApplicationController
   before_action :set_donor, only: [:show, :edit, :update, :destroy]
 
   def index
-    @donors = Donor.all
+    if current_user.hospital?
+      @donors = Donor.all
+    else
+      redirect_to root_path, alert: "You are not authorized to access this page"
+    end
   end
 
   def show

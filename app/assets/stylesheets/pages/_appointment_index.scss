@@ -1,5 +1,3 @@
-@import "home";
-
 h1 {
   display: flex;
   justify-content: flex-start;
@@ -16,9 +14,9 @@ h1 {
 }
 
 #map {
-  width: 90%;
+  width: 80%;
   height: 600px;
-  margin-right: 300px;
+  margin-right: 500px;
   border-radius: 20px;
 }
 .card h1 {
@@ -67,5 +65,7 @@ h1 {
   color: #CD0E0E;
   transform: scale(1.05);
 }
-@import "appointment_index";
-@import "donor_profile";
+
+.card-link {
+  text-decoration: none;
+}

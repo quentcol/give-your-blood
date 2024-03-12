@@ -1,21 +1,21 @@
-<%= simple_form_for(center, url: center_path(center), method: "patch") do |form| %>
+<%= form_with model: @center do |f| %>
 
   <div class="field">
-    <%= form.label :name, "Name" %>
-    <%= form.text_field :name, class: "form-control" %>
+    <%= f.label :name, "Name" %>
+    <%= f.text_field :name, class: "form-control" %>
   </div>
 
   <div class="field">
-    <%= form.label :address, "Address" %>
-    <%= form.text_field :address, class: "form-control" %>
+    <%= f.label :address, "Address" %>
+    <%= f.text_field :address, class: "form-control" %>
   </div>
 
   <div class="field">
-    <%= form.label :hospital_id, "Hospital" %>
-    <%= form.collection_select :hospital_id, Hospital.all, :id, :hospital_name, { include_blank: true }, class: "form-control" %>
+    <%= f.label :hospital_id, "Hospital" %>
+    <%= f.collection_select :hospital_id, Hospital.all, :id, :hospital_name, { include_blank: true }, class: "form-control" %>
   </div>
 
   <div class="actions">
-    <%= form.button :submit, "Save", class: "btn btn-primary" %>
+    <%= f.button :submit, class: "btn btn-primary" %>
   </div>
 <% end %>
