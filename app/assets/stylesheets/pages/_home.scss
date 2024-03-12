@@ -110,27 +110,30 @@ body {
   height:auto;
   border-radius: 10px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  justify-content: space-between;
   margin-right: 50px;
+  padding: 15px;
+  background-color: whitesmoke;
+  font-size: 17px;
   }
 
 .card-btn{
   background:rgb(183, 8, 8);
   color:white;
-  font-family: "Hedvig", sans-serif;
-  font-weight: 300;
-  height: 50%;
+  font-family: "Syne", sans-serif;
+  font-weight: 650;
+  height: 75%;
   margin-bottom: 10px;
   text-align: center;
-  border-radius: 10px;
+  border-radius: 5px;
   border: none;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  padding-left: 5px;
+  padding: 7px;
   }
 
 .card-btn:hover {
-  background-color: rgba(80, 2, 2, 0.8);
+  background-color: whitesmoke;
+  color: #CD0E0E;
   }
 
   .phrase {
