@@ -1,5 +1,6 @@
 class HospitalsController < ApplicationController
   before_action :authenticate_user!
+  before_action :check_hospital_category
   before_action :set_hospital, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -39,6 +40,10 @@ class HospitalsController < ApplicationController
   end
 
   private
+
+  def check_hospital_category
+    redirect_to root_path, alert: "You are not authorized to access this page" unless current_user.hospital?
+  end
 
   def set_hospital
     @hospital = current_user.hospitals.find(params[:id])
