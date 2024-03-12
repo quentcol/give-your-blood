@@ -1,16 +1,18 @@
 <h1>Centers</h1>
 <div class="index-container">
-  <div class="row">
-    <% @centers.each do |center| %>
-      <div class="card">
-        <div class="card__section">
-          <p class="card__title"><%= center.name %></p>
-          <p class="card__body"><%= center.address %></p>
-          <%= link_to 'Book an appointment', appointments_path, class: 'button alt' %>
+  <% @centers.each_slice(2) do |centers_row| %>
+    <div class="row">
+      <% centers_row.each do |center| %>
+        <div class="card">
+          <div class="card__section">
+            <p class="card__title"><%= center.name %></p>
+            <p class="card__body"><%= center.address %></p>
+            <%= link_to 'Book an appointment', appointments_path, class: 'button alt' %>
+          </div>
         </div>
-      </div>
-    <% end %>
-  </div>
+      <% end %>
+    </div>
+  <% end %>
 
   <div data-controller="map"
     style="width: 60%; height: 600px;"
