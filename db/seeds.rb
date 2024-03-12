@@ -39,7 +39,7 @@ puts "creating days"
 weekdays = %w[Monday Tuesday Wednesday Thursday Friday Saturday]
 
 weekdays.each do |day_name|
-  
+
   Day.create!(name: day_name)
 end
 
