@@ -25,12 +25,15 @@
         <% if user_signed_in? %>
           <li class="nav-item dropdown">
             <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <%= 'My Profile' %>
+              <%= 'Menu' %>
             </a>
 
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                <%= link_to "Action", "#", class: "dropdown-item" %>
-                <%= link_to "Another action", "#", class: "dropdown-item" %>
+               <% if current_user && current_user.donor %>
+                  <%= link_to "Profile", donor_path(current_user.donor), class: "dropdown-item" %>
+                <% else %>
+                  <%= link_to "Create Donor Profile", new_donor_path, class: "dropdown-item" %>
+                <% end %>
                 <%= link_to "Log out", destroy_user_session_path, data: { turbo_method: :delete }, class: "dropdown-item" %>
             </div>
           </li>

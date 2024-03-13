@@ -1,9 +1,14 @@
 class DonorsController < ApplicationController
   before_action :authenticate_user!
+  before_action :check_donor_category
   before_action :set_donor, only: [:show, :edit, :update, :destroy]
 
   def index
-    @donors = Donor.all
+    if current_user.hospital?
+      @donors = Donor.all
+    else
+      redirect_to root_path, alert: "You are not authorized to access this page"
+    end
   end
 
   def show
@@ -44,6 +49,10 @@ class DonorsController < ApplicationController
   end
 
   private
+
+  def check_donor_category
+    redirect_to root_path, alert: "You are not authorized to access this page" unless current_user.donor?
+  end
 
   def set_donor
     @donor = Donor.find(params[:id])

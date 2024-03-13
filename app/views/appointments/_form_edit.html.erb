@@ -1,28 +1,26 @@
 <div>
-<%= simple_form_for(@appointment, url: appointment_path(@appointment), method: "patch") do |form| %>
-  <% if appointment.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(appointment.errors.count, "error") %> prohibited this appointment from being saved:</h2>
-      <ul>
-      <% appointment.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+<%= form_with model: @appointment do |f| %>
 
-  <%= form.input :appointment_date, label: "Appointment Date:", input_html: { class: "form-edit" } %>
+  <%= f.label :appointment_date, "Appointment Date:" %>
+  <%= f.date_field :appointment_date, class: "form-edit" %>
 
-  <%= form.input :appointment_time, label: "Appointment Time:", input_html: { class: "form-edit" } %>
+  <%= f.label :appointment_time, "Appointment Time:" %>
+  <%= f.time_field :appointment_time, class: "form-edit" %>
 
-  <%= form.input :person_in_charge, label: "Person in Charge:", input_html: { class: "form-label" } %>
+  <%= f.label :person_in_charge, "Person in Charge:" %>
+  <%= f.select :person_in_charge, [["John Doe", "john_doe"], ["Jane Smith", "jane_smith"]], { prompt: "Select Person in Charge" }, { class: "form-control" } %>
 
-  <%= form.input :donor_id, label: "Donor:", collection: Donor.all.map { |donor| [donor.first_name, donor.last_name, donor.id] }, include_blank: false, input_html: { class: "form-control" } %>
+  <%= f.label :donor_id, "Donor:" %>
+  <%= f.collection_select :donor_id, Donor.all, :id, :last_name, { prompt: "Select Donor" }, { class: "form-control" } %>
 
-  <%= form.input :status, label: "Status:", input_html: { class: "form-control" } %>
+  <%= f.label :center_id, "Center:" %>
+  <%= f.collection_select :center_id, Center.all, :id, :name, { prompt: "Select Center" }, { class: "form-control" } %>
+
+  <%= f.label :status, "Status:" %>
+  <%= f.select :status, [["Pending", "pending"], ["Completed", "completed"]], { prompt: "Select Status" }, { class: "form-control" } %>
 
   <div class="actions-edit">
-    <%= form.button :submit, "Save Edit", class: "btn btn-danger" %>
+    <%= f.submit "Save Edit", class: "btn btn-danger" %>
   </div>
 <% end %>
 </div>

@@ -1,14 +1,51 @@
-<h1>Donor Details</h1>
-<p><strong>First Name:</strong> <%= @donor.first_name %></p>
-<p><strong>Last Name:</strong> <%= @donor.last_name %></p>
-<p><strong>Address:</strong> <%= @donor.address %></p>
-<p><strong>Blood Type:</strong> <%= @donor.blood_type %></p>
-<p><strong>Birthdate:</strong> <%= @donor.birthdate %></p>
-<p><strong>National ID:</strong> <%= @donor.national_id %></p>
+<div class="donor-index">
+  <div class="donor-profile">
+    <div><h3 class="my-profile-text">Profile Page</h3></div>
+    <div class="donor_profile_links">
+      <div><%= link_to 'Back', donors_path, class: "link" %></div>
+      
+    </div>
+  </div>
 
-<%= link_to 'Edit', edit_donor_path(@donor), class: 'btn btn-primary' %>
-<%= link_to 'Back', donors_path, class: 'btn btn-secondary' %>
-<%= link_to "Delete",
-  donor_path(@donor), class: 'btn btn-secondary',
-  data: {turbo_method: :delete, turbo_confirm: "Are you sure?" }
-%>
+  <div class="profile_content">
+    <div class="profile_details">
+      <div><h2 class="my-profile">My profile</h2></div>
+      <div class="my_profile_text">
+        <div><p><strong>First Name:</strong> <%= @donor.first_name %></p></div>
+        <div><p><strong>Last Name:</strong> <%= @donor.last_name %></p></div>
+        <div><p><strong>Address:</strong> <%= @donor.address %></p></div>
+        <div><p><strong>Blood Type:</strong> <%= @donor.blood_type %></p></div>
+        <div><p><strong>Birthdate:</strong> <%= @donor.birthdate %></p></div>
+        <div><p><strong>National ID:</strong> <%= @donor.national_id %></p></div>
+        <div class="edit-donor-profile">
+          <div><%= link_to 'Edit', edit_donor_path(@donor), class: "link" %></div>
+          <div><%= link_to "Delete",
+                          donor_path(@donor),
+                          data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
+                          class: "link" %></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="show_appointments">
+      <div class="my-profile-div">
+        <div><h2 class="my-profile">My appointments</h2></div>
+      </div>
+      <div class="appointment_grid">
+        <div class="appointment_grid-details">Appointment number 1</div>
+        <div class="appointment_grid-details">Appointment number 1</div>
+        <div class="appointment_grid-details">Appointment number 1</div>
+        <div class="appointment_grid-details">Appointment number 1</div>
+        <div class="appointment_grid-details">Appointment number 1</div>
+        <div class="appointment_grid-details">Appointment number 1</div>
+      </div>
+      
+    </div>
+
+  </div>
+  
+</div>
+
+
+
+

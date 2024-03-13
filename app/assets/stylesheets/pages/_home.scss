@@ -43,10 +43,12 @@ body {
   padding-left: 10px;
 }
 
+
+
 .background-picture {
-  background-image: url("https://images.unsplash.com/photo-1615461066159-fea0960485d5?q=80&w=2032&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  background-image: url("https://images.pexels.com/photos/5340280/pexels-photo-5340280.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
   width: auto;
-  height: 80vh;
+  height: 60vh;
   background-size: cover;
   background-position: center;
   display: flex;
@@ -55,10 +57,10 @@ body {
 }
 
 .background-picture h2{
-  color:#F6EBE7;
+  color:#CD0E0E;
   font-size: 4rem;
   font-family: "Gasoek one", sans-serif;
-  font-weight: 100;
+  font-weight: 80;
   margin-bottom: 20px;
   text-align: left;
   margin-bottom: auto;
@@ -96,6 +98,10 @@ body {
   text-size-adjust: 20px;
 }
 
+.card-css h2{
+  font-size: 8px;
+}
+
 .card{
   display: flex;
   flex-direction: row;
@@ -103,6 +109,7 @@ body {
   margin-bottom: 30px;
   padding: 20px;
   border: none;
+  justify-content: space-between;
 }
 
 .card-css{
@@ -110,29 +117,52 @@ body {
   height:auto;
   border-radius: 10px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  justify-content: space-between;
-  margin-right: 50px;
+  padding: 15px;
+  margin: 25px;
+  background-color: whitesmoke;
+  font-size: 17px;
   }
 
 .card-btn{
-  background:rgb(183, 8, 8);
+  background:#CD0E0E;
   color:white;
-  font-family: "Hedvig", sans-serif;
-  font-weight: 300;
-  height: 50%;
+  font-family: "Syne", sans-serif;
+  font-weight: 650;
+  height: 75%;
   margin-bottom: 10px;
   text-align: center;
-  border-radius: 10px;
+  border-radius: 5px;
   border: none;
+  text-decoration: none;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  padding-left: 5px;
+  padding: 7px;
   }
 
 .card-btn:hover {
-  background-color: rgba(80, 2, 2, 0.8);
+  background-color: whitesmoke;
+  color: #CD0E0E;
   }
+
+.card-btn button {
+  background: transparent;
+  color: white;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: none;
+}
+
+.card-btn button:hover {
+  color: #CD0E0E;
+}
 
   .phrase {
     font-family: "Syne", sans-serif;
   }
+
+.card-css p {
+  text-align: justify;
+}
