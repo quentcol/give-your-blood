@@ -1,0 +1,59 @@
+body {
+  font-family: 'Syne', sans-serif;
+  background-color: #F6EBE7;
+  margin: 0;
+  padding: 0;
+}
+.container {
+  max-width: 600px;
+  margin: 40px auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.container h1 {
+  color: #CD0E0E;
+  font-size: 30px;
+  font-family: 'Gasoek one', sans-serif;
+  display: flex;
+  margin: 10px;
+  justify-content: center;
+}
+.appointment-details {
+  margin-bottom: 20px;
+}
+.detail {
+  margin: 10px;
+  margin-top: 15px;
+}
+strong {
+  color:#CD0E0E;
+}
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+.btn-primary {
+  background-color: #CD0E0E;
+  color: #fff;
+}
+
+.btn-primary :hover {
+  background-color: #F6EBE7;
+  color: #CD0E0E;
+}
+
+.btn-secondary {
+  background-color: #6C757D;
+  color: #fff;
+}
+.btn:hover {
+  opacity: 0.8;
+}
