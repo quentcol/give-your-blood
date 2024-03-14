@@ -15,7 +15,7 @@ class AppointmentsController < ApplicationController
   def create
     @appointment = Appointment.new(appointment_params)
     if @appointment.save
-      redirect_to appointments_path, notice: 'Appointment was successfully created.'
+      redirect_to root_path, notice: 'Appointment was successfully created.'
     else
       render :new, status: :unprocessable_entity
     end
@@ -48,4 +48,3 @@ class AppointmentsController < ApplicationController
     params.require(:appointment).permit(:appointment_date, :appointment_time, :person_in_charge, :donor_id, :center_id, :status)
   end
 end
-

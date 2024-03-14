@@ -8,13 +8,13 @@
                 <div class="card__section">
                   <p class="card__title"><%= center.name %></p>
                   <p class="card__body"><%= center.address %></p>
-                  <%= link_to 'Book an appointment', appointments_path, class: 'button alt' %>
+                  <%= link_to 'Book an appointment', new_appointment_path, class: 'button alt' %>
                 </div>
               </div>
             <% end %>
         <% end %>
     </div>
-    
+
   </div>
   <div class="map-container">
     <div data-controller="map"
