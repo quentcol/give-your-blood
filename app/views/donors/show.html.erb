@@ -3,20 +3,21 @@
     <div><h3 class="my-profile-text">Profile Page</h3></div>
     <div class="donor_profile_links">
       <div><%= link_to 'Back', donors_path, class: "link" %></div>
+      <div><%= link_to 'New Appointment', new_appointment_path, class: 'new-appointment-btn-show' %></div>
       
     </div>
   </div>
 
   <div class="profile_content">
     <div class="profile_details">
-      <div><h2 class="my-profile">My profile</h2></div>
+      <div class="profile-header">My Profile</div>
       <div class="my_profile_text">
-        <div><p><strong>First Name:</strong> <%= @donor.first_name %></p></div>
-        <div><p><strong>Last Name:</strong> <%= @donor.last_name %></p></div>
-        <div><p><strong>Address:</strong> <%= @donor.address %></p></div>
-        <div><p><strong>Blood Type:</strong> <%= @donor.blood_type %></p></div>
-        <div><p><strong>Birthdate:</strong> <%= @donor.birthdate %></p></div>
-        <div><p><strong>National ID:</strong> <%= @donor.national_id %></p></div>
+        <div><p><strong>First Name:</strong> <%= content_tag :span, @donor.first_name, class: 'profile-details-text-black' %></p></div>
+        <div><p><strong>Last Name:</strong> <%= content_tag :span, @donor.last_name, class: 'profile-details-text-black' %></p></div>
+        <div><p><strong>Address:</strong> <%= content_tag :span, @donor.address, class: 'profile-details-text-black' %></p></div>
+        <div><p><strong>Blood Type:</strong> <%= content_tag :span, @donor.blood_type, class: 'profile-details-text-black' %></p></div>
+        <div><p><strong>Birthdate:</strong> <%= content_tag :span, @donor.birthdate, class: 'profile-details-text-black' %></p></div>
+        <div><p><strong>National ID:</strong> <%= content_tag :span, @donor.national_id, class: 'profile-details-text-black' %></p></div>
         <div class="edit-donor-profile">
           <div><%= link_to 'Edit', edit_donor_path(@donor), class: "link" %></div>
           <div><%= link_to "Delete",
@@ -29,21 +30,45 @@
 
     <div class="show_appointments">
       <div class="my-profile-div">
-        <div><h2 class="my-profile">My appointments</h2></div>
+        <div>My appointments</div>
       </div>
       <div class="appointment_grid">
-        <div class="appointment_grid-details">Appointment number 1</div>
-        <div class="appointment_grid-details">Appointment number 1</div>
-        <div class="appointment_grid-details">Appointment number 1</div>
-        <div class="appointment_grid-details">Appointment number 1</div>
-        <div class="appointment_grid-details">Appointment number 1</div>
-        <div class="appointment_grid-details">Appointment number 1</div>
-      </div>
-      
-    </div>
+          <% if @appointments.any? %>
+            <% @appointments.each do |appointment| %>
+              <div class="profile-appointment">
+                <div class="detail">
+                  <strong>Date:</strong>
+                  <%= appointment.appointment_date %>
+                </div>
+                <div class="detail">
+                  <strong>Time:</strong>
+                  <%= appointment.appointment_time %>
+                </div>
+                <div class="detail">
+                  <strong>Person in Charge:</strong>
+                  <%= appointment.person_in_charge %>
+                </div>
+                <div class="detail">
+                  <strong>Donor:</strong>
+                  <%= appointment.donor.full_name %>
+                </div>
+                <div class="detail">
+                  <strong>Status:</strong>
+                  <%= appointment.status %>
+                </div>
 
+                <div class="detail">
+                  <%= link_to 'Show', appointment, class: 'profile-appointment-show' %>
+                </div>
+              </div>
+
+            <% end %>
+            <% else %>
+                No appointments
+            <% end %>
+      </div>
+    </div>
   </div>
-  
 </div>
 
 
