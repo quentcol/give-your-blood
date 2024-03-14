@@ -1,9 +1,6 @@
 <h1>Centers</h1>
 <div class="index-container">
   <div class="appointments-container">
-    <div class="apointment-filter">
-      Filter
-    </div>
     <div class="card-appointment-container">
       <% @centers.each do |center| %>
           <%= link_to center_path(center), class: "card-link" do %>

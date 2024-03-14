@@ -39,7 +39,6 @@ class CentersController < ApplicationController
   end
 
   def destroy
-    raise
     @center.destroy
     redirect_to @center, notice: 'Center was successfully destroyed.'
   end
