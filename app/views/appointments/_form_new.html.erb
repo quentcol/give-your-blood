@@ -1,4 +1,4 @@
-<div>
+
 <%= form_with model: @appointment do |f| %>
 
   <%= f.label :appointment_date, "Appointment Date:" %>
@@ -18,7 +18,7 @@
 
   <%= f.label :status, "Status:" %>
   <%= f.select :status, [["Pending", "pending"], ["Completed", "completed"]], { prompt: "Select Status" }, { class: "form-control" } %>
-</div>
+
 
   <div class="actions-btn">
     <%= f.submit "Confirm Appointment", class: "btn btn-danger" %>
