@@ -12,6 +12,8 @@ class DonorsController < ApplicationController
   end
 
   def show
+    @donor = current_user.donor
+    @appointments = @donor.appointments
   end
 
   def new

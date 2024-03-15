@@ -1,44 +1,36 @@
 <h1>
   <%= @center.name %>
 </h1>
+<h2>
+  <%= @center.address %>
+</h2>
 
-<div class="center-address">
-  <h2>
-    <%= @center.address %>
-  </h2>
+<div class="map-schedule">
+
+    <div class="schedule">
+      <h1>Schedule</h1>
+      <ul>
+        <li><strong>Thursday:</strong> openingstime</li>
+        <li><strong>Wednesday:</strong> openingstime</li>
+        <li><strong>Tuesday:</strong> openingstime</li>
+        <li><strong>Friday:</strong> openingstime</li>
+        <li><strong>Saturday:</strong> openingstime</li>
+        <li><strong>Sunday:</strong> openingstime</li>
+      </ul>
+    </div>
+
+    <div data-controller="map"
+      style="width: 100%; height: 600px; border-radius: 15px;"
+      id='map'
+      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
+      data-controller="map"
+      data-map-markers-value="<%= @markers.to_json %>"
+      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
 </div>
 
-<div class="schedule-reviews">
-  <div class="schedule">
-    <h1>Schedule</h1>
-    <ul>
-      <li><strong>Thursday:</strong> openingstime</li>
-      <li><strong>Wednesday:</strong> openingstime</li>
-      <li><strong>Tuesday:</strong> openingstime</li>
-      <li><strong>Friday:</strong> openingstime</li>
-      <li><strong>Saturday:</strong> openingstime</li>
-      <li><strong>Sunday:</strong> openingstime</li>
-    </ul>
-  </div>
-
-  <div class="reviews">
+<div class="reviews">
     <h1>Reviews</h1>
   </div>
 </div>
 
-<div class="map-show">
-  <div data-controller="map"
-    style="width: 100%; height: 600px; border-radius: 15px;"
-    id='map'
-    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
-    data-controller="map"
-    data-map-markers-value="<%= @markers.to_json %>"
-    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-  </div>
-</div>
-
-<div class="actions">
-  <%= link_to 'Edit', edit_center_path(@center),  class: 'button alt' %>
-  <%= link_to 'Back', centers_path, class: 'button alt' %>
-  <%= link_to 'Delete', @center, method: :delete, data: { confirm: 'Are you sure?' },  class: 'button alt' %>
-</div>

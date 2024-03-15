@@ -8,3 +8,77 @@
 legend ~ div.form-check:first-of-type {
   clear: left;
 }
+
+.new-form-container{
+  width: 950px;
+  margin-left: 300px;
+}
+
+.form-control {
+  margin: 0 auto;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  background-color: white;
+
+}
+
+.btn {
+  display: flex;
+  margin: 0 auto;
+  margin-left: 39%;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 20px;
+  background-color: #E03838;
+  color: white;
+}
+
+.actions-btn{
+padding-top: 15px;
+margin-right: 15px;
+}
+
+.f-h1 {
+  color: #CD0E0E;
+  font-family: "Gasoek one", sans-serif;
+  font-weight: 100;
+  text-align: center;
+  margin-bottom: 50px;
+  padding-top: 30px;
+
+}
+
+label {
+  display: flex;
+  justify-content: center;
+  color: white;
+  background-color: #e66464;
+  margin-bottom: 10px;
+  padding: 5px;
+  border-radius: 5px;
+  margin-right: 80%;
+}
+
+.actions-edit {
+  margin-left: 70px;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  border-radius: 15px;
+}
+
+.edit-f {
+  margin-left: 60px;
+  justify-content: center;
+  margin-top: 30px;
+  border-radius: 15px;
+  margin-bottom: 50px;
+}
+
+.form-edit{
+  justify-content: center;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  background-color: lightpink;
+  width: 960px;
+}

@@ -53,14 +53,21 @@
   margin-bottom: 100px;
 }
 
-.map-show {
-  margin-top: 50px;
-  margin-left: 160px;
-  margin-right: 160px;
-}
-
 #map {
   width: 100%;
   height: 600px;
   border-radius: 15px;
+  margin-right: 68px;
+}
+
+.map-schedule {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+.reviews h1 {
+  display: grid;
+  grid-template-columns: 1fr;
+  text-align: center;
+  margin-top: 68px;
 }

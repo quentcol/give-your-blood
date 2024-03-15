@@ -22,14 +22,13 @@
     </div>
     <div class="center-index-cards">
         <% @centers.each do |center| %>
-          <a href="<%= center_path(center) %>" class="card">
-            <div class="card__section">
+          <%= link_to(center_path(center)) do %>
+            <div class="card-center">
               <p class="card__title"><%= center.name %></p>
               <p class="card__body"><%= center.address %></p>
             </div>
-          </a>
+          <% end %>
         <% end %>
     </div>
   </div>
 </div>
-

@@ -11,22 +11,17 @@
   border-radius: 20px;
 }
 
-.card {
-  text-decoration: none;
-}
-
-.card__section {
+.card-center {
   padding: 20px;
   background-color: #f8f8f8;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  width: 300px;
-  max-width: calc(100% - 40px);
+  width: 100%;
   margin-bottom: 20px;
   transition: transform 0.3s ease-in-out;
 }
 
-.card:hover .card__section {
+.card-center:hover {
   transform: translateY(-5px);
 }
 
@@ -34,11 +29,13 @@
   font-weight: bold;
   font-size: 16px;
   margin-bottom: 5px;
+  text-decoration: none;
 }
 
 .card__body {
   font-size: 14px;
   color: #666;
+  text-decoration: none;
 }
 
 .text-map {
@@ -88,9 +85,15 @@
   width: 100%;
   display: flex;
   flex-direction: column;
+  margin-top: 48px;
 }
 
 .center-index-cards {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  gap: 24px;
+  a {
+    margin: 0;
+  }
+  width: 100%;
 }
