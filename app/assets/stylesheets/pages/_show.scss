@@ -1,0 +1,74 @@
+.center-address {
+  margin-left: 68px;
+  font-family: 'Gasoek One', cursive;
+}
+
+.schedule-reviews {
+  display: flex;
+  margin-top: 140px;
+  margin-left: 160px;
+}
+
+.schedule {
+  flex: 1;
+}
+
+.schedule h1 {
+  margin-bottom: 10px;
+}
+
+.schedule ul li {
+  margin-top: 40px;
+  margin-left: 70px;
+}
+
+.reviews {
+  flex: 1;
+}
+
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  background-color: #cd0e0e;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, transform 0.2s ease-in-out;
+  outline: none;
+}
+
+.button:hover {
+  background-color: white;
+  color: #cd0e0e;
+  transform: scale(1.05);
+}
+
+.actions {
+  text-align: center;
+  margin-bottom: 100px;
+}
+
+#map {
+  width: 100%;
+  height: 600px;
+  border-radius: 15px;
+  margin-right: 68px;
+}
+
+.map-schedule {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  margin-top: 48px;
+}
+
+.reviews h1 {
+  display: grid;
+  grid-template-columns: 1fr;
+  text-align: center;
+  margin-top: 68px;
+}

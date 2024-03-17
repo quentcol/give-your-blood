@@ -1,18 +1,39 @@
-<p>
-  <strong>Name:</strong>
-  <%= @center.name %>
-</p>
+<div class="show-title">
+  <h1>
+    <%= @center.name %>
+  </h1>
+    <div class="show-address">
+    <h2>
+      <%= @center.address %>
+    </h2>
+  </div>
+</div>
 
-<p>
-  <strong>Address:</strong>
-  <%= @center.address %>
-</p>
+<div class="map-schedule">
 
-<p>
-  <strong>Hospital:</strong>
-  <%= @center.hospital.hospital_name %>
-</p>
+    <div class="schedule">
+      <h1>Schedule</h1>
+      <ul>
+        <li><strong>Thursday:</strong> openingstime</li>
+        <li><strong>Wednesday:</strong> openingstime</li>
+        <li><strong>Tuesday:</strong> openingstime</li>
+        <li><strong>Friday:</strong> openingstime</li>
+        <li><strong>Saturday:</strong> openingstime</li>
+        <li><strong>Sunday:</strong> openingstime</li>
+      </ul>
+    </div>
 
-<%= link_to 'Edit', edit_center_path(@center) %> |
-<%= link_to 'Back', centers_path %>
-<%= link_to 'Delete', @center, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <div data-controller="map"
+      style="width: 100%; height: 600px; border-radius: 15px;"
+      id='map'
+      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
+      data-controller="map"
+      data-map-markers-value="<%= @markers.to_json %>"
+      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
+</div>
+
+<div class="reviews">
+    <h1>Reviews</h1>
+  </div>
+</div>

@@ -13,13 +13,21 @@ Day.delete_all
 
 puts "creating users"
 user_1 = User.create!({ email: 'host-a@host.com', password: 'password123', category: 'hospital' })
+
 user_2 = User.create!({ email: 'host-b1@host.com', password: 'password12', category: 'hospital' })
+
 user_3 = User.create!({ email: 'host-b2@host.com', password: 'password1234', category: 'donor' })
+
 user_4 = User.create!({ email: 'test@gmail.com', password: 'test123', category: 'donor' })
+
 user_5 = User.create!({ email: 'user1@example.com', password: 'user123', category: 'hospital' })
+
 user_6 = User.create!({ email: 'user2@example.com', password: 'user456', category: 'donor' })
+
 user_7 = User.create!({ email: 'user3@example.com', password: 'user789', category: 'donor' })
+
 user_8 = User.create!({ email: 'user4@example.com', password: 'user000', category: 'hospital' })
+
 
 puts "creating donors"
 donor_1 = { user: user_1, first_name: 'Iheb', last_name: "Laib", blood_type: 'A+', address: 'New York', birthdate: '1995-01-01' }
@@ -58,9 +66,11 @@ center_8 = Center.create!({ hospital: hospital_8, name: 'Blood Center 8', addres
 
 puts "creating days"
 weekdays = %w[Monday Tuesday Wednesday Thursday Friday Saturday Sunday]
+
 weekdays.each do |day_name|
   Day.create!(name: day_name)
 end
+
 
 puts "creating schedules"
 schedules_1 = Schedule.create!({ center_id: center_1.id, day: Day.first, opening_time: '09:00', closing_time: '12:00' })
@@ -82,7 +92,6 @@ appointment_6 = Appointment.create!({ donor_id: Donor.fifth.id, center_id: cente
 appointment_7 = Appointment.create!({ donor_id: Donor.third.id, center_id: center_7.id })
 appointment_8 = Appointment.create!({ donor_id: Donor.first.id, center_id: center_8.id })
 
-puts "creating reviews"
 review_1 = Review.create!({ donor: Donor.first, center_id: center_1.id, rating: 4, review_content: "Great experience!" })
 review_2 = Review.create!({ donor: Donor.second, center_id: center_2.id, rating: 5, review_content: "Highly recommended!"})
 review_3 = Review.create!({ donor: Donor.third, center_id: center_3.id, rating: 3, review_content: "Easy going Nurse." })
