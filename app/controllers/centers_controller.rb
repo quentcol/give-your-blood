@@ -18,10 +18,14 @@ class CentersController < ApplicationController
 
   def new
     @center = Center.new
+    authorize @center
   end
 
   def create
     @center = Center.new(center_params)
+
+    authorize @center
+
     if @center.save
       redirect_to @center, notice: 'Center was successfully created.'
     else

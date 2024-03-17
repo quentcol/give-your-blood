@@ -10,4 +10,16 @@ class CenterPolicy < ApplicationPolicy
   def show?
     true
   end
+
+  def new?
+    return create?
+  end
+
+  def create?
+    if user.category == 'hospital'
+      return true
+    else
+      return false
+    end
+  end
 end
