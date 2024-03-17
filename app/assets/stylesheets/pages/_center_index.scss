@@ -26,22 +26,26 @@
 }
 
 .card__title {
-  font-weight: bold;
   font-size: 16px;
   margin-bottom: 5px;
   text-decoration: none;
+  color: #CD0E0E;
+  font-family: 'Gasoek One', sans-serif;
+  text-align: center;
 }
 
 .card__body {
   font-size: 14px;
   color: #666;
   text-decoration: none;
+  text-align: center;
 }
 
 .text-map {
   display: grid;
   grid-template-columns: 1fr 2fr;
   gap: 88px;
+  width: 100%;
 }
 
 .title-center {
@@ -94,6 +98,17 @@
   gap: 24px;
   a {
     margin: 0;
+    text-decoration: none !important;
   }
   width: 100%;
+}
+
+.text-map-center {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.map-container {
+  margin: 0;
 }
