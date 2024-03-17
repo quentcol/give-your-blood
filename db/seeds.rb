@@ -1,7 +1,7 @@
 # This file should ensure the existence of records required to run the application in every environment (production,
 # development, test). The code here should be idempotent so that it can be executed at any point in every environment.
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-
+Review.delete_all
 Appointment.delete_all
 Schedule.delete_all
 Center.delete_all
@@ -9,6 +9,7 @@ Hospital.delete_all
 Donor.delete_all
 User.delete_all
 Day.delete_all
+
 
 puts "creating users"
 user_1 = User.create!({ email: 'host-a@host.com', password: 'password123', category: 'hospital' })
@@ -90,5 +91,14 @@ appointment_5 = Appointment.create!({ donor_id: Donor.fifth.id, center_id: cente
 appointment_6 = Appointment.create!({ donor_id: Donor.fifth.id, center_id: center_6.id })
 appointment_7 = Appointment.create!({ donor_id: Donor.third.id, center_id: center_7.id })
 appointment_8 = Appointment.create!({ donor_id: Donor.first.id, center_id: center_8.id })
+
+review_1 = Review.create!({ donor: Donor.first, center_id: center_1.id, rating: 4, review_content: "Great experience!" })
+review_2 = Review.create!({ donor: Donor.second, center_id: center_2.id, rating: 5, review_content: "Highly recommended!"})
+review_3 = Review.create!({ donor: Donor.third, center_id: center_3.id, rating: 3, review_content: "Easy going Nurse." })
+review_4 = Review.create!({ donor: Donor.fourth, center_id: center_4.id, rating: 2, review_content: "long waiting List" })
+review_5 = Review.create!({ donor: Donor.fifth, center_id: center_5.id, rating: 4, review_content: "Nice facilities." })
+review_6 = Review.create!({ donor: Donor.fifth, center_id: center_6.id, rating: 5, review_content: "Close to my House" })
+review_7 = Review.create!({ donor: Donor.third, center_id: center_7.id, rating: 3, review_content: "Freindly Staff!" })
+review_8 = Review.create!({ donor: Donor.first, center_id: center_8.id, rating: 4, review_content: "Quick service!" })
 
 puts "seeds done!"
