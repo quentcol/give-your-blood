@@ -5,4 +5,28 @@ class AppointmentPolicy < ApplicationPolicy
     #   scope.all
     # end
   end
+
+  def show?
+    return user.donor.id = record.id
+  end
+
+  def new?
+    return create?
+  end
+
+  def create?
+    if user.category == 'donor'
+      return true
+    else
+      return false
+    end
+  end
+
+  def edit?
+    return update?
+  end
+
+  def update?
+    user.donor == record
+  end
 end
