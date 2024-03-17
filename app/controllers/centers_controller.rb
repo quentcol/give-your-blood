@@ -34,9 +34,11 @@ class CentersController < ApplicationController
   end
 
   def edit
+    authorize @center
   end
 
   def update
+    authorize @center
     if @center.update(center_params)
       redirect_to @center, notice: 'Center was successfully updated.'
     else
@@ -45,6 +47,7 @@ class CentersController < ApplicationController
   end
 
   def destroy
+    authorize @center
     @center.destroy
     redirect_to @center, notice: 'Center was successfully destroyed.'
   end

@@ -1,10 +1,9 @@
-class CenterPolicy < ApplicationPolicy
+class HospitalPolicy < ApplicationPolicy
   class Scope < Scope
     # NOTE: Be explicit about which records you allow access to!
     # def resolve
     #   scope.all
     # end
-
   end
 
   def show?
@@ -16,11 +15,7 @@ class CenterPolicy < ApplicationPolicy
   end
 
   def create?
-    if user.category == 'hospital'
-      return true
-    else
-      return false
-    end
+    user.category == 'hospital'
   end
 
   def edit?
