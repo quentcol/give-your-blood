@@ -8,6 +8,7 @@ class HospitalsController < ApplicationController
   end
 
   def show
+    authorize @hospital
   end
 
   def new

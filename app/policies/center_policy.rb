@@ -28,6 +28,6 @@ class CenterPolicy < ApplicationPolicy
   end
 
   def update?
-    record.hospital_id == user.hospital.id
+    user.hospitals.exists?(id: record.hospital_id)
   end
 end
