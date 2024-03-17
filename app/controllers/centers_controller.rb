@@ -2,6 +2,7 @@ class CentersController < ApplicationController
   before_action :set_center, only: [:show, :edit, :update, :destroy]
 
   def index
+    authorize(@center)
     @centers = Center.all
     @markers = @centers.geocoded.map do |center|
       {
@@ -12,6 +13,7 @@ class CentersController < ApplicationController
   end
 
   def show
+    authorize(@center)
   end
 
   def new
