@@ -53,7 +53,7 @@ class DonorsController < ApplicationController
   def update
     authorize @donor
     if @donor.update(donor_params)
-      redirect_to @donor, notice: 'Donor was successfully updated.'
+      redirect_to donor_path(@donor), notice: 'Donor was successfully updated.'
     else
       render :edit
     end
