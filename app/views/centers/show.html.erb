@@ -12,15 +12,16 @@
 <div class="map-schedule">
 
     <div class="schedule">
-      <h1>Schedule</h1>
       <ul>
-        <li><strong>Thursday:</strong> openingstime</li>
-        <li><strong>Wednesday:</strong> openingstime</li>
-        <li><strong>Tuesday:</strong> openingstime</li>
-        <li><strong>Friday:</strong> openingstime</li>
-        <li><strong>Saturday:</strong> openingstime</li>
-        <li><strong>Sunday:</strong> openingstime</li>
-      </ul>
+      <% Day.all.each do |day| %>
+        <% schedule = @center.schedules.find_by(day_id: day.id) %>
+        <% if schedule %>
+          <li><strong><%= day.name %>:</strong> <%= schedule.opening_time %> - <%= schedule.closing_time %></li>
+        <% else %>
+          <li><strong><%= day.name %>:</strong> Closed</li>
+        <% end %>
+      <% end %>
+    </ul>
     </div>
 
     <div data-controller="map"
