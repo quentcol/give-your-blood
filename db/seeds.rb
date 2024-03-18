@@ -65,40 +65,41 @@ center_7 = Center.create!({ hospital: hospital_7, name: 'Blood Center 7', addres
 center_8 = Center.create!({ hospital: hospital_8, name: 'Blood Center 8', address: 'Utrecht' })
 
 puts "creating days"
-weekdays = %w[Monday Tuesday Wednesday Thursday Friday Saturday Sunday]
 
-weekdays.each do |day_name|
-  Day.create!(name: day_name)
-end
-
+monday = Day.create!(name: 'Monday')
+tuesday = Day.create!(name: 'Tuesday')
+wednesday = Day.create!(name: 'Wednesday')
+thursday = Day.create!(name: 'Thursday')
+friday = Day.create!(name: 'Friday')
 
 puts "creating schedules"
-schedules_1 = Schedule.create!({ center_id: center_1.id, day: Day.first, opening_time: '09:00', closing_time: '12:00' })
-schedules_2 = Schedule.create!({ center_id: center_2.id, day: Day.second, opening_time: '09:00', closing_time: '12:00' })
-schedules_3 = Schedule.create!({ center_id: center_3.id, day: Day.third, opening_time: '09:00', closing_time: '12:00' })
-schedules_4 = Schedule.create!({ center_id: center_4.id, day: Day.fourth, opening_time: '09:00', closing_time: '12:00' })
-schedules_5 = Schedule.create!({ center_id: center_5.id, day: Day.fifth, opening_time: '09:00', closing_time: '12:00' })
-schedules_6 = Schedule.create!({ center_id: center_6.id, day: Day.fifth, opening_time: '09:00', closing_time: '12:00' })
-schedules_7 = Schedule.create!({ center_id: center_7.id, day: Day.third, opening_time: '09:00', closing_time: '12:00' })
-schedules_8 = Schedule.create!({ center_id: center_8.id, day: Day.first, opening_time: '09:00', closing_time: '12:00' })
+
+Center.all.each do |center|
+  Schedule.create!(center: center, day: monday, opening_time: '09:00', closing_time: '12:00')
+  Schedule.create!(center: center, day: tuesday, opening_time: '09:00', closing_time: '12:00')
+  Schedule.create!(center: center, day: wednesday, opening_time: '09:00', closing_time: '12:00')
+  Schedule.create!(center: center, day: thursday, opening_time: '09:00', closing_time: '12:00')
+  Schedule.create!(center: center, day: friday, opening_time: '09:00', closing_time: '12:00')
+end
 
 puts "creating appointments"
-appointment_1 = Appointment.create!({ donor_id: Donor.first.id, center_id: center_1.id })
-appointment_2 = Appointment.create!({ donor_id: Donor.second.id, center_id: center_2.id })
-appointment_3 = Appointment.create!({ donor_id: Donor.third.id, center_id: center_3.id })
-appointment_4 = Appointment.create!({ donor_id: Donor.fourth.id, center_id: center_4.id })
-appointment_5 = Appointment.create!({ donor_id: Donor.fifth.id, center_id: center_5.id })
-appointment_6 = Appointment.create!({ donor_id: Donor.fifth.id, center_id: center_6.id })
-appointment_7 = Appointment.create!({ donor_id: Donor.third.id, center_id: center_7.id })
-appointment_8 = Appointment.create!({ donor_id: Donor.first.id, center_id: center_8.id })
+
+appointment_1 = Appointment.create!({ donor_id: Donor.first.id, appointment_date: Date.today, appointment_time: Time.new(2008,6,21, 13,30,0, "+01:00"), person_in_charge: "john doe" , status: "pending", center_id: center_1.id })
+appointment_2 = Appointment.create!({ donor_id: Donor.all.sample.id, appointment_date: Date.today + 1, appointment_time: Time.new(2008,6,21, 10,30,0, "+01:00"), person_in_charge: "john doe", status: "pending", center_id: center_2.id })
+appointment_3 = Appointment.create!({ donor_id: Donor.all.sample.id, appointment_date: Date.today + 2, appointment_time: Time.new(2008,6,21, 10,30,0, "+01:00"), person_in_charge: "john doe", status: "pending", center_id: center_3.id })
+appointment_4 = Appointment.create!({ donor_id: Donor.all.sample.id, appointment_date: Date.today + 3, appointment_time: Time.new(2008,6,21, 11,30,0, "+01:00"), person_in_charge: "john doe", status: "pending", center_id: center_4.id })
+appointment_5 = Appointment.create!({ donor_id: Donor.all.sample.id, appointment_date: Date.today + 4, appointment_time: Time.new(2008,6,21, 12,30,0, "+01:00"), person_in_charge: "john doe", status: "pending", center_id: center_5.id })
+appointment_6 = Appointment.create!({ donor_id: Donor.all.sample.id, appointment_date: Date.today + 5, appointment_time: Time.new(2008,6,21, 13,30,0, "+01:00"), person_in_charge: "john doe", status: "pending", center_id: center_6.id })
+appointment_7 = Appointment.create!({ donor_id: Donor.all.sample.id, appointment_date: Date.today + 6, appointment_time: Time.new(2008,6,21, 14,30,0, "+01:00"), person_in_charge: "john doe", status: "pending", center_id: center_7.id })
+appointment_8 = Appointment.create!({ donor_id: Donor.last.id, appointment_date: Date.today, appointment_time: Time.new(2008,6,21, 13,30,0, "+01:00"), person_in_charge: "john doe", status: "pending", center_id: center_8.id })
 
 review_1 = Review.create!({ donor: Donor.first, center_id: center_1.id, rating: 4, review_content: "Great experience!" })
-review_2 = Review.create!({ donor: Donor.second, center_id: center_2.id, rating: 5, review_content: "Highly recommended!"})
-review_3 = Review.create!({ donor: Donor.third, center_id: center_3.id, rating: 3, review_content: "Easy going Nurse." })
-review_4 = Review.create!({ donor: Donor.fourth, center_id: center_4.id, rating: 2, review_content: "long waiting List" })
-review_5 = Review.create!({ donor: Donor.fifth, center_id: center_5.id, rating: 4, review_content: "Nice facilities." })
-review_6 = Review.create!({ donor: Donor.fifth, center_id: center_6.id, rating: 5, review_content: "Close to my House" })
-review_7 = Review.create!({ donor: Donor.third, center_id: center_7.id, rating: 3, review_content: "Freindly Staff!" })
-review_8 = Review.create!({ donor: Donor.first, center_id: center_8.id, rating: 4, review_content: "Quick service!" })
+review_2 = Review.create!({ donor: Donor.all.sample, center_id: center_2.id, rating: 5, review_content: "Highly recommended!"})
+review_3 = Review.create!({ donor: Donor.all.sample, center_id: center_3.id, rating: 3, review_content: "Easy going Nurse." })
+review_4 = Review.create!({ donor: Donor.all.sample, center_id: center_4.id, rating: 2, review_content: "long waiting List" })
+review_5 = Review.create!({ donor: Donor.all.sample, center_id: center_5.id, rating: 4, review_content: "Nice facilities." })
+review_6 = Review.create!({ donor: Donor.all.sample, center_id: center_6.id, rating: 5, review_content: "Close to my House" })
+review_7 = Review.create!({ donor: Donor.all.sample, center_id: center_7.id, rating: 3, review_content: "Freindly Staff!" })
+review_8 = Review.create!({ donor: Donor.last, center_id: center_8.id, rating: 4, review_content: "Quick service!" })
 
 puts "seeds done!"
