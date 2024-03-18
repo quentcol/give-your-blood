@@ -3,7 +3,7 @@ class ReviewsController < ApplicationController
   before_action :set_review, only: [:show, :edit]
 
   def index
-    @reviews = @center.reviews
+    @reviews = policy_scope(@center.reviews)
   end
 
   def show

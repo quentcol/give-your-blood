@@ -1,13 +1,17 @@
-class AppointmentPolicy < ApplicationPolicy
+class ReviewPolicy < ApplicationPolicy
   class Scope < Scope
     # NOTE: Be explicit about which records you allow access to!
-    # def resolve
-    #   scope.all
-    # end
+    def resolve
+      scope.all
+    end
   end
 
   def show?
-    return user.donor.id = record.id
+    true
+  end
+
+  def index?
+    true
   end
 
   def new?
@@ -22,4 +26,11 @@ class AppointmentPolicy < ApplicationPolicy
     end
   end
 
+  def destroy?
+    user == record.donor
+  end
+
+  def update?
+    false
+  end
 end
