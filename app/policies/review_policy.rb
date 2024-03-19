@@ -19,7 +19,7 @@ class ReviewPolicy < ApplicationPolicy
   end
 
   def create?
-    if user.category == 'donor'
+    if user.category == 'donor' || user.isadmin
       return true
     else
       return false
@@ -27,7 +27,7 @@ class ReviewPolicy < ApplicationPolicy
   end
 
   def destroy?
-    user == record.donor
+    user == record.donor || user.isadmin
   end
 
   def update?

@@ -15,7 +15,7 @@ class HospitalPolicy < ApplicationPolicy
   end
 
   def create?
-    user.category == 'hospital'
+    user.category == 'hospital' || user.isadmin
   end
 
   def edit?
@@ -23,6 +23,6 @@ class HospitalPolicy < ApplicationPolicy
   end
 
   def update?
-    record.hospital_id == user.hospital.id
+    record.hospital_id == user.hospital.id || user.isadmin
   end
 end

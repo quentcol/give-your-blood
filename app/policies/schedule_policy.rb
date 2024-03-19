@@ -11,20 +11,20 @@ class SchedulePolicy < ApplicationPolicy
   end
 
   def create?
-    user_hospital_owner?
+    user_hospital_owner? || user.isadmin
   end
 
   def update?
-    user_hospital_owner?
+    user_hospital_owner? || user.isadmin
   end
 
   def destroy?
-    user_hospital_owner?
+    user_hospital_owner? || user.isadmin
   end
 
   private
 
   def user_hospital_owner?
-    user.hospitals.exists?(id: record.center.hospital_id)
+    user.hospitals.exists?(id: record.center.hospital_id) || user.isadmin
   end
 end

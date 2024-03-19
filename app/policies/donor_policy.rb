@@ -15,7 +15,7 @@ class DonorPolicy < ApplicationPolicy
   end
 
   def create?
-    if user.category == 'donor'
+    if user.category == 'donor' || user.isadmin
       return true
     else
       return false
@@ -27,6 +27,6 @@ class DonorPolicy < ApplicationPolicy
   end
 
   def update?
-    user.donor == record
+    user.donor == record || user.isadmin
   end
 end
