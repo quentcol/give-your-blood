@@ -76,13 +76,16 @@
 .lorem-ipsum  h1 {
   margin-left: 0px;
   margin-bottom: 36;
+  color: #CD0E0E;
+  font-family: 'Gasoek One', cursive;
+
 }
 
 .lorem-ipsum {
   display: flex;
   flex-direction: column;
   height: 100%;
-  align-items: center;
+  margin-top: 150px;
 }
 
 .section-cards {
