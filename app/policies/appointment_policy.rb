@@ -7,15 +7,15 @@ class AppointmentPolicy < ApplicationPolicy
   end
 
   def show?
-    return user.donor.id == record.id || user.isadmin
+    return user.donor.id == record.id
   end
 
   def new?
-    return create? || user.isadmin
+    return create?
   end
 
   def create?
-    if user.category == 'donor' || user.isadmin
+    if user.category == 'donor'
       return true
     else
       return false

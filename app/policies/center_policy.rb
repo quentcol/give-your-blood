@@ -8,7 +8,7 @@ class CenterPolicy < ApplicationPolicy
   end
 
   def show?
-    true || user.isadmin
+    true
   end
 
   def new?
@@ -16,7 +16,7 @@ class CenterPolicy < ApplicationPolicy
   end
 
   def create?
-    if user.category == 'hospital' || user.isadmin
+    if user.category == 'hospital'
       return true
     else
       return false
@@ -28,6 +28,6 @@ class CenterPolicy < ApplicationPolicy
   end
 
   def update?
-    user.hospitals.exists?(id: record.hospital_id) || user.isadmin
+    user.hospitals.exists?(id: record.hospital_id)
   end
 end
