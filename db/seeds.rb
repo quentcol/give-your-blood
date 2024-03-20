@@ -55,14 +55,14 @@ hospital_7 = Hospital.create!({ user: user_7, hospital_name: 'Saint Mary Hospita
 hospital_8 = Hospital.create!({ user: user_8, hospital_name: 'Royal Hospital' })
 
 puts "creating centers"
-center_1 = Center.create!({ hospital: hospital_1, name: 'Blood Center 1', address: 'Leidschedam' })
-center_2 = Center.create!({ hospital: hospital_2, name: 'Blood Center 2', address: 'Schiedam' })
-center_3 = Center.create!({ hospital: hospital_3, name: 'Blood Center 3', address: 'Wateringen' })
-center_4 = Center.create!({ hospital: hospital_4, name: 'Blood Center 4', address: 'Delft' })
-center_5 = Center.create!({ hospital: hospital_5, name: 'Blood Center 5', address: 'Amsterdam' })
-center_6 = Center.create!({ hospital: hospital_6, name: 'Blood Center 6', address: 'Rotterdam' })
-center_7 = Center.create!({ hospital: hospital_7, name: 'Blood Center 7', address: 'The Hague' })
-center_8 = Center.create!({ hospital: hospital_8, name: 'Blood Center 8', address: 'Utrecht' })
+center_1 = Center.create!({ hospital: hospital_1, name: 'General Center', address: 'Leidschedam' })
+center_2 = Center.create!({ hospital: hospital_2, name: 'Children Center', address: 'Schiedam' })
+center_3 = Center.create!({ hospital: hospital_3, name: 'Army Veterans Center', address: 'Wateringen' })
+center_4 = Center.create!({ hospital: hospital_4, name: 'Kingston Center', address: 'Delft' })
+center_5 = Center.create!({ hospital: hospital_5, name: 'Big City Center', address: 'Amsterdam' })
+center_6 = Center.create!({ hospital: hospital_6, name: 'UniversityCenter', address: 'Rotterdam' })
+center_7 = Center.create!({ hospital: hospital_7, name: 'Saint Mary Center', address: 'The Hague' })
+center_8 = Center.create!({ hospital: hospital_8, name: 'Royal Center', address: 'Utrecht' })
 
 puts "creating days"
 
@@ -95,10 +95,10 @@ appointment_8 = Appointment.create!({ donor_id: Donor.last.id, appointment_date:
 
 review_1 = Review.create!({ donor: Donor.first, center_id: center_1.id, rating: 4, review_content: "Great experience!" })
 review_2 = Review.create!({ donor: Donor.all.sample, center_id: center_2.id, rating: 5, review_content: "Highly recommended!"})
-review_3 = Review.create!({ donor: Donor.all.sample, center_id: center_3.id, rating: 3, review_content: "Easy going Nurse." })
+review_3 = Review.create!({ donor: Donor.all.sample, center_id: center_3.id, rating: 3, review_content: "Easy going Nurses." })
 review_4 = Review.create!({ donor: Donor.all.sample, center_id: center_4.id, rating: 2, review_content: "long waiting List" })
 review_5 = Review.create!({ donor: Donor.all.sample, center_id: center_5.id, rating: 4, review_content: "Nice facilities." })
-review_6 = Review.create!({ donor: Donor.all.sample, center_id: center_6.id, rating: 5, review_content: "Close to my House" })
+review_6 = Review.create!({ donor: Donor.all.sample, center_id: center_6.id, rating: 5, review_content: "Closer to my House" })
 review_7 = Review.create!({ donor: Donor.all.sample, center_id: center_7.id, rating: 3, review_content: "Freindly Staff!" })
 review_8 = Review.create!({ donor: Donor.last, center_id: center_8.id, rating: 4, review_content: "Quick service!" })
 
