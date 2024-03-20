@@ -7,10 +7,14 @@
         <h2>BLOOD</h2>
       </div>
       <p class="title-p">Save lives, add your postal code below and find nearby locations to donate</p>
-      <div class="input-group">
-        <input type="text" class="form-control" placeholder="Postal code" aria-label="Recipient's username" aria-describedby="button-addon2">
-        <button class="btn btn-outline-secondary" type="button" id="button-addon2">Search</button>
+   
+      <div data-controller="search">
+          <div class="input-group">
+              <input type="text" class="form-control" placeholder="City Name" aria-label="City Name" aria-describedby="button-addon2" data-target="search.cityInput">
+              <button class="btn btn-outline-secondary" type="button" id="searchButton" data-action="click->search#search">Search</button>
+          </div>
       </div>
+    
     </div>
 </header>
  <div class="title-article">

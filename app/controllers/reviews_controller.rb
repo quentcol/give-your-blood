@@ -20,7 +20,7 @@ class ReviewsController < ApplicationController
     if @review.save
       redirect_to center_path(@center), notice: 'Review was successfully created.'
     else
-      render :new
+      render :show
     end
   end
 

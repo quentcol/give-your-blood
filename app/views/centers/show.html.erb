@@ -1,40 +1,72 @@
-<div class="show-title">
-  <h1>
-    <%= @center.name %>
-  </h1>
-    <div class="show-address">
-    <h2>
-      <%= @center.address %>
-    </h2>
+<div class="center-show-page-container" style="padding: 10px 50px 80px;">
+
+  <div class="show-title">
+    <div class="centers-title-header">
+     <h4 class="centers-show-title"><%= @center.name %></h4>
+      <div><%= link_to 'New Appointment', new_appointment_path, class: 'new-appointment-btn-show' %></div>
+    </div>
+    
+      <div class="show-address">
+      <h4 class="centers-show-address">
+        <%= @center.address %>
+      </h4>
+    </div>
   </div>
-</div>
 
-<div class="map-schedule">
+  <div class="map-schedule">
 
-    <div class="schedule">
-      <ul>
-      <% Day.all.each do |day| %>
-        <% schedule = @center.schedules.find_by(day_id: day.id) %>
-        <% if schedule %>
-          <li><strong><%= day.name %>:</strong> <%= schedule.opening_time %> - <%= schedule.closing_time %></li>
-        <% else %>
-          <li><strong><%= day.name %>:</strong> Closed</li>
-        <% end %>
+      <div class="schedule">
+        <h4 class="schedule-title-text">Schedule</h4>
+        <ul>
+          <% @opening_time.each do |opening| %>
+            <li><strong>Monday:</strong> <%= "#{opening.opening_time.strftime('%H:%M')} - #{opening.closing_time.strftime('%H:%M')}" %></li>
+              <li><strong>Thursday:</strong>  <%= "#{opening.opening_time.strftime('%H:%M')} - #{opening.closing_time.strftime('%H:%M')}" %></li>
+              <li><strong>Wednesday:</strong> <%= "#{opening.opening_time.strftime('%H:%M')} - #{opening.closing_time.strftime('%H:%M')}" %></li>
+              <li><strong>Tuesday:</strong> <%= "#{opening.opening_time.strftime('%H:%M')} - #{opening.closing_time.strftime('%H:%M')}" %></li>
+              <li><strong>Friday:</strong> <%= "#{opening.opening_time.strftime('%H:%M')} - #{opening.closing_time.strftime('%H:%M')}" %></li>
+              <li><strong>Saturday:</strong> <%= "#{opening.opening_time.strftime('%H:%M')} - #{opening.closing_time.strftime('%H:%M')}" %></li>
+              <li><strong>Sunday:</strong> <%= "#{opening.opening_time.strftime('%H:%M')} - #{opening.closing_time.strftime('%H:%M')}" %></li>
+          <% end %>
+         </ul>
+      </div>
+      <div class="centers-show-page-map" style="width: 100%px; height: 500px; border-radius: 15px; positin: relative;">
+        <div data-controller="map"
+        style="width: 100%; height: 100%; border-radius: 15px; positin: absolute;"
+        id='map'
+        data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
+        data-controller="map"
+        data-map-markers-value="<%= @markers.to_json %>"
+        data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
+      </div>
+      
+  </div>
+
+  
+  <div data-controller="toggle">
+  <div class="center-reviews-title" style="display: flex; align-items: flex-start;">
+    <h3>Center reviews: </h3> <button data-action="click->toggle#fire" class="add-review-btn">Add a review</button>
+  </div>
+    
+
+    <div class="review-form" data-toggle-target="togglableElement">
+      <%= render "form_new_review", center: @center, user: current_user %>
+    </div>
+
+  </div>
+  
+
+  <div class="add-review">
+    <div class="display-user">
+      <% @reviews.each do |review| %>
+        <div class="review">
+          <div>Review by: <%= review.donor.last_name %></div>
+          <div>Review Date: <%= review.created_at.strftime("%Y-%m-%d") %></div>
+          <div>Rating: <%= review.rating %> <%= '⭐' * review.rating %></div>
+          <div><%= review.review_content %></div>
+        </div>
       <% end %>
-    </ul>
     </div>
-
-    <div data-controller="map"
-      style="width: 100%; height: 600px; border-radius: 15px;"
-      id='map'
-      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
-      data-controller="map"
-      data-map-markers-value="<%= @markers.to_json %>"
-      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-    </div>
-</div>
-
-<div class="reviews">
-    <h1>Reviews</h1>
   </div>
-</div>
+
+
