@@ -12,6 +12,9 @@ class CentersController < ApplicationController
   end
 
   def show
+    @center = Center.find(params[:id])
+    @reviews = @center.reviews
+    @review = Review.new
   end
 
   def new
