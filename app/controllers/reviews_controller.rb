@@ -16,9 +16,9 @@ class ReviewsController < ApplicationController
   def create
     @review = @center.reviews.new(review_params)
     if @review.save
-      redirect_to center_reviews_path(@center), notice: 'Review was successfully created.'
+      redirect_to center_path(@center), notice: 'Review was successfully created.'
     else
-      render :new
+      render :show
     end
   end
 
