@@ -3,7 +3,7 @@ class ReviewsController < ApplicationController
   before_action :set_review, only: [:show, :edit]
 
   def index
-    @reviews = @center.reviews
+    @reviews = policy_scope(@center.reviews)
   end
 
   def show
@@ -11,10 +11,12 @@ class ReviewsController < ApplicationController
 
   def new
     @review = @center.reviews.new
+    authorize @review
   end
 
   def create
     @review = @center.reviews.new(review_params)
+    authorize @review
     if @review.save
       redirect_to center_path(@center), notice: 'Review was successfully created.'
     else

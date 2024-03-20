@@ -17,6 +17,7 @@
     <%= f.label :center_id, "Center:" %>
     <%= f.collection_select :center_id, Center.all, :id, :name, { prompt: "Select Center" }, { class: "form-control" } %>
 
+
     <%= f.label :status, "Status:" %>
     <%= f.select :status, [["Pending", "pending"], ["Completed", "completed"]], { prompt: "Select Status" }, { class: "form-control" } %>
 
@@ -26,4 +27,3 @@
     </div>
   <% end %>
 </div>
-
