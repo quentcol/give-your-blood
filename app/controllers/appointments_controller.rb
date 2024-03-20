@@ -10,10 +10,13 @@ class AppointmentsController < ApplicationController
 
   def new
     @appointment = Appointment.new
+    authorize @appointment
   end
 
   def create
     @appointment = Appointment.new(appointment_params)
+    @appointment.status = 'pending'
+    authorize @appointment
     if @appointment.save
       redirect_to root_path, notice: 'Appointment was successfully created.'
     else

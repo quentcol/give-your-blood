@@ -2,7 +2,7 @@ class CentersController < ApplicationController
   before_action :set_center, only: [:show, :edit, :update, :destroy]
 
   def index
-    @centers = Center.all
+    @centers = policy_scope(Center) # Fetch only authorized centers
     @markers = @centers.geocoded.map do |center|
       {
         lat: center.latitude,
@@ -12,6 +12,8 @@ class CentersController < ApplicationController
   end
 
   def show
+    authorize(@center)
+
 
     @center = Center.find(params[:id])
     @reviews = @center.reviews
@@ -31,10 +33,14 @@ class CentersController < ApplicationController
 
   def new
     @center = Center.new
+    authorize @center
   end
 
   def create
     @center = Center.new(center_params)
+
+    authorize @center
+
     if @center.save
       redirect_to @center, notice: 'Center was successfully created.'
     else
@@ -43,9 +49,11 @@ class CentersController < ApplicationController
   end
 
   def edit
+    authorize @center
   end
 
   def update
+    authorize @center
     if @center.update(center_params)
       redirect_to @center, notice: 'Center was successfully updated.'
     else
@@ -54,6 +62,7 @@ class CentersController < ApplicationController
   end
 
   def destroy
+    authorize @center
     @center.destroy
     redirect_to @center, notice: 'Center was successfully destroyed.'
   end
