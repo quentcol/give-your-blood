@@ -1,6 +1,8 @@
-.center-address {
+.show-title h1 {
+  font-family: 'Gasoek One', sans-serif;
+  color: #CD0E0E;
+  font-weight: bold;
   margin-left: 68px;
-  font-family: 'Gasoek One', cursive;
 }
 
 .schedule-reviews {
@@ -9,13 +11,26 @@
   margin-left: 160px;
 }
 
+.show-title h2 {
+  margin-left: 68px;
+}
+
 .schedule {
   flex: 1;
 }
 
+
 .centers-show-page-map {
   flex: 2;
   position: relative;
+
+.schedule h1 {
+  margin-bottom: 10px;
+  margin-left: 68px;
+  font-family: 'Gasoek One', sans-serif;
+  color: #CD0E0E;
+  font-weight: bold;
+
 }
 
 .schedule ul li {
@@ -23,9 +38,6 @@
   margin-left: 70px;
 }
 
-.reviews {
-  flex: 1;
-}
 
 .button {
   display: inline-block;
@@ -71,6 +83,7 @@
   text-align: center;
   margin-top: 68px;
 }
+
 
 .centers-show-Book-now {
   width: 180px;
@@ -177,3 +190,38 @@
   justify-content: space-between;
   margin-top: 20px;
 }
+
+.card-show {
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  border: 1px solid #e0e0e0;
+  margin-bottom: 20px;
+}
+
+.card-show:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card-show h5 {
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #333333;
+}
+
+.card-show p {
+  margin: 0;
+  font-size: 14px;
+  color: #666666;
+}
+
+
+.show-title h2 {
+  font-family:  'Gasoek One', cursive;
+  font-size: medium;
+}
+

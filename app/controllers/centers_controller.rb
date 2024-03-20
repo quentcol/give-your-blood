@@ -12,9 +12,21 @@ class CentersController < ApplicationController
   end
 
   def show
+
     @center = Center.find(params[:id])
     @reviews = @center.reviews
     @review = Review.new
+
+    @opening_time = Schedule.where(center_id: @center.id)
+    @reviews = Review.where(center_id: @center.id)
+    @center_array = Center.where(id: @center.id)
+    @markers = @center_array.geocoded.map do |center|
+      {
+        lat: center.latitude,
+        lng: center.longitude
+      }
+    end
+
   end
 
   def new
