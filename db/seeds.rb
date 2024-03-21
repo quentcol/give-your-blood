@@ -55,14 +55,14 @@ hospital_7 = Hospital.create!({ user: user_7, hospital_name: 'Saint Mary Hospita
 hospital_8 = Hospital.create!({ user: user_8, hospital_name: 'Royal Hospital' })
 
 puts "creating centers"
-center_1 = Center.create!({ hospital: hospital_1, name: 'Blood Center 1', address: 'Leidschedam' })
-center_2 = Center.create!({ hospital: hospital_2, name: 'Blood Center 2', address: 'Schiedam' })
-center_3 = Center.create!({ hospital: hospital_3, name: 'Blood Center 3', address: 'Wateringen' })
-center_4 = Center.create!({ hospital: hospital_4, name: 'Blood Center 4', address: 'Delft' })
-center_5 = Center.create!({ hospital: hospital_5, name: 'Blood Center 5', address: 'Amsterdam' })
-center_6 = Center.create!({ hospital: hospital_6, name: 'Blood Center 6', address: 'Rotterdam' })
-center_7 = Center.create!({ hospital: hospital_7, name: 'Blood Center 7', address: 'The Hague' })
-center_8 = Center.create!({ hospital: hospital_8, name: 'Blood Center 8', address: 'Utrecht' })
+center_1 = Center.create!({ hospital: hospital_1, name: 'General Hospital', address: 'Leidschedam' })
+center_2 = Center.create!({ hospital: hospital_2, name: 'Children Hospital', address: 'Schiedam' })
+center_3 = Center.create!({ hospital: hospital_3, name: 'Veterans Hospital', address: 'Wateringen' })
+center_4 = Center.create!({ hospital: hospital_4, name: 'Kingston Hospital', address: 'Delft' })
+center_5 = Center.create!({ hospital: hospital_5, name: 'City Hospital', address: 'Amsterdam' })
+center_6 = Center.create!({ hospital: hospital_6, name: 'University Hospital', address: 'Rotterdam' })
+center_7 = Center.create!({ hospital: hospital_7, name: 'Saint Mary Hospital', address: 'The Hague' })
+center_8 = Center.create!({ hospital: hospital_8, name: 'Royal Hospital', address: 'Utrecht' })
 
 puts "creating days"
 
