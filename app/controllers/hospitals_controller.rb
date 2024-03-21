@@ -8,14 +8,17 @@ class HospitalsController < ApplicationController
   end
 
   def show
+    authorize @hospital
   end
 
   def new
     @hospital = Hospital.new
+    authorize @hospital
   end
 
   def create
     @hospital = current_user.hospitals.build(hospital_params)
+    authorize @hospital
     if @hospital.save
       redirect_to @hospital, notice: 'Hospital was successfully created.'
     else
