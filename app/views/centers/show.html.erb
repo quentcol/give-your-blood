@@ -19,9 +19,7 @@
         <h4 class="schedule-title-text">Schedule</h4>
         <ul>
           <% @opening_time.each do |opening| %>
-          <% @days.each do |day| %>
-            <li><strong><%= day.name %></strong> <%= "#{opening.opening_time.strftime('%H:%M')} - #{opening.closing_time.strftime('%H:%M')}" %></li>
-          <% end %>
+           <li><strong><%= opening.day.name %></strong>  <%= "#{opening.opening_time.strftime('%H:%M')} - #{opening.closing_time.strftime('%H:%M')}" %></li>
           <% end %>
          </ul>
       </div>

@@ -9,6 +9,7 @@ class HospitalsController < ApplicationController
 
   def show
     authorize @hospital
+    @appointments = Appointment.where(hospital_id: @hospital.id)
   end
 
   def new
@@ -17,8 +18,9 @@ class HospitalsController < ApplicationController
   end
 
   def create
-    @hospital = current_user.hospitals.build(hospital_params)
+    @hospital = Hospital.new(hospital_params)
     authorize @hospital
+    @hospital.user = current_user
     if @hospital.save
       redirect_to @hospital, notice: 'Hospital was successfully created.'
     else
@@ -49,7 +51,7 @@ class HospitalsController < ApplicationController
   end
 
   def set_hospital
-    @hospital = current_user.hospitals.find(params[:id])
+    @hospital = Hospital.find(params[:id])
   end
 
   def hospital_params
