@@ -12,21 +12,21 @@ Day.delete_all
 
 
 puts "creating users"
-user_1 = User.create!({ email: 'host-a@host.com', password: 'password123', category: 'hospital', is_admin: true })
+user_1 = User.create!({ email: 'host-a@host.com', password: 'password123', category: 'hospital' })
 
-user_2 = User.create!({ email: 'host-b1@host.com', password: 'password12', category: 'hospital', is_admin: false})
+user_2 = User.create!({ email: 'host-b1@host.com', password: 'password12', category: 'hospital' })
 
-user_3 = User.create!({ email: 'host-b2@host.com', password: 'password1234', category: 'donor', is_admin: false })
+user_3 = User.create!({ email: 'host-b2@host.com', password: 'password1234', category: 'donor' })
 
-user_4 = User.create!({ email: 'test@gmail.com', password: 'test123', category: 'donor', is_admin: false })
+user_4 = User.create!({ email: 'test@gmail.com', password: 'test123', category: 'donor' })
 
-user_5 = User.create!({ email: 'user1@example.com', password: 'user123', category: 'hospital', is_admin: false })
+user_5 = User.create!({ email: 'user1@example.com', password: 'user123', category: 'hospital' })
 
-user_6 = User.create!({ email: 'user2@example.com', password: 'user456', category: 'donor', is_admin: false })
+user_6 = User.create!({ email: 'user2@example.com', password: 'user456', category: 'donor' })
 
-user_7 = User.create!({ email: 'user3@example.com', password: 'user789', category: 'donor', is_admin: false })
+user_7 = User.create!({ email: 'user3@example.com', password: 'user789', category: 'donor' })
 
-user_8 = User.create!({ email: 'user4@example.com', password: 'user000', category: 'hospital', is_admin: false })
+user_8 = User.create!({ email: 'user4@example.com', password: 'user000', category: 'hospital' })
 
 
 puts "creating donors"
