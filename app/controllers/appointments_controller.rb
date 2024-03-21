@@ -20,6 +20,7 @@ class AppointmentsController < ApplicationController
     @appointment = Appointment.new(appointment_params)
     @appointment.donor = current_user.donor
     @appointment.person_in_charge = 'Center Staff'
+    @appointment.status ||= :pending
     authorize @appointment
     if @appointment.save
       redirect_to donor_path(@appointment.donor), notice: 'Appointment was successfully created.'

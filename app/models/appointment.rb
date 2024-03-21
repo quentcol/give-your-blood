@@ -8,10 +8,4 @@ class Appointment < ApplicationRecord
     update(status: 'canceled')
   end
 
-  private
-
-  def set_default_status
-    self.status ||= :pending
-  end
-
 end
