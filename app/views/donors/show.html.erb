@@ -2,7 +2,7 @@
   <div class="donor-profile">
     <div><h3 class="my-profile-text">Profile Page</h3></div>
     <div class="donor_profile_links">
-      <div><%= link_to 'Back', donors_path, class: "link" %></div>
+      <div><%= link_to 'Back', root_path, class: "profile-link-back" %></div>
       <div><%= link_to 'New Appointment', new_appointment_path, class: 'new-appointment-btn-show' %></div>
       
     </div>
@@ -19,11 +19,11 @@
         <div><p><strong>Birthdate:</strong> <%= content_tag :span, @donor.birthdate, class: 'profile-details-text-black' %></p></div>
         <div><p><strong>National ID:</strong> <%= content_tag :span, @donor.national_id, class: 'profile-details-text-black' %></p></div>
         <div class="edit-donor-profile">
-          <div><%= link_to 'Edit', edit_donor_path(@donor), class: "link" %></div>
+          <div><%= link_to 'Edit', edit_donor_path(@donor), class: "profile-link-edit" %></div>
           <div><%= link_to "Delete",
                           donor_path(@donor),
                           data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
-                          class: "link" %></div>
+                          class: "profile-link-delete" %></div>
         </div>
       </div>
     </div>
@@ -59,6 +59,7 @@
 
                 <div class="detail">
                   <%= link_to 'Show', appointment, class: 'profile-appointment-show' %>
+                  <%= link_to 'Delete', appointment_path(appointment), data: { turbo_method: :delete, remote: true, confirm: 'Are you sure you want to delete this appointment?' }, class: 'profile-appointment-delete' %>
                 </div>
               </div>
 

@@ -13,18 +13,30 @@ class DonorsController < ApplicationController
 
   def show
     @donor = current_user.donor
+
+    authorize @donor
+
+    if @donor.nil?
+      redirect_to new_donor_path, alert: "Please create a donor profile"
+      return
+    end
+
     @appointments = @donor.appointments
   end
 
   def new
     @donor = Donor.new
+    authorize @donor
   end
 
   def create
     @donor = Donor.new(donor_params)
+
+    authorize @donor
+
     @donor.user = current_user
     if @donor.save
-      redirect_to donors_path, notice: 'Donor was successfully created.'
+      redirect_to root_path, notice: 'Donor was successfully created.'
     else
       render :new, status: :unprocessable_entity
     end
@@ -35,11 +47,13 @@ class DonorsController < ApplicationController
   end
 
   def edit
+    authorize @donor
   end
 
   def update
+    authorize @donor
     if @donor.update(donor_params)
-      redirect_to @donor, notice: 'Donor was successfully updated.'
+      redirect_to donor_path(@donor), notice: 'Donor was successfully updated.'
     else
       render :edit
     end

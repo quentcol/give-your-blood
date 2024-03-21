@@ -1,13 +1,14 @@
-class DonorPolicy < ApplicationPolicy
+class CenterPolicy < ApplicationPolicy
   class Scope < Scope
     # NOTE: Be explicit about which records you allow access to!
-    # def resolve
-    #   scope.all
-    # end
+    def resolve
+      scope.all
+    end
+
   end
 
   def show?
-    return user.donor.id = record.id
+    true
   end
 
   def new?
@@ -15,7 +16,7 @@ class DonorPolicy < ApplicationPolicy
   end
 
   def create?
-    if user.category == 'donor'
+    if user.category == 'hospital'
       return true
     else
       return false
@@ -27,6 +28,6 @@ class DonorPolicy < ApplicationPolicy
   end
 
   def update?
-    user.donor == record
+    user.hospitals.exists?(id: record.hospital_id)
   end
 end

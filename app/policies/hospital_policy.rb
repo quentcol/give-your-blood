@@ -1,4 +1,4 @@
-class DonorPolicy < ApplicationPolicy
+class HospitalPolicy < ApplicationPolicy
   class Scope < Scope
     # NOTE: Be explicit about which records you allow access to!
     # def resolve
@@ -7,7 +7,7 @@ class DonorPolicy < ApplicationPolicy
   end
 
   def show?
-    return user.donor.id = record.id
+    true
   end
 
   def new?
@@ -15,11 +15,7 @@ class DonorPolicy < ApplicationPolicy
   end
 
   def create?
-    if user.category == 'donor'
-      return true
-    else
-      return false
-    end
+    user.category == 'hospital'
   end
 
   def edit?
@@ -27,6 +23,6 @@ class DonorPolicy < ApplicationPolicy
   end
 
   def update?
-    user.donor == record
+    record.hospital_id == user.hospital.id
   end
 end

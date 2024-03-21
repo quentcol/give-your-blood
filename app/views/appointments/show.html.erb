@@ -20,10 +20,14 @@
       <div class="detail">
         <strong>Status:</strong>
         <%= @appointment.status %>
+        <% if @appointment.status == "canceled" %>
+          <span class="text-danger">(Canceled)</span>
+        <% end %>
       </div>
     </div>
-    <div class="actions">
-      <%= link_to 'Edit', edit_appointment_path(@appointment), class: "btn btn-primary" %>
-      <%= link_to 'Back', appointments_path, class: "btn btn-secondary" %>
+    <div class="show-appointment-actions">
+      <%= link_to 'Edit', edit_appointment_path(@appointment), class: "show-appointment-edit-btn" %>
+      <%= link_to 'Back', donor_path(@appointment.donor), class: "show-appointment-back-btn" %>
+      <%= button_to 'Cancel', cancel_appointment_path(@appointment), method: :patch, data: { confirm: 'Are you sure you want to cancel this appointment?' }, class: "show-appointment-cancel-btn" %>
     </div>
 </div>
