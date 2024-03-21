@@ -12,21 +12,21 @@ Day.delete_all
 
 
 puts "creating users"
-user_1 = User.create!({ email: 'host-a@host.com', password: 'password123', category: 'hospital', is_admin: true })
+user_1 = User.create!({ email: 'host-a@host.com', password: 'password123', category: 'hospital' })
 
-user_2 = User.create!({ email: 'host-b1@host.com', password: 'password12', category: 'hospital', is_admin: false})
+user_2 = User.create!({ email: 'host-b1@host.com', password: 'password12', category: 'hospital' })
 
-user_3 = User.create!({ email: 'host-b2@host.com', password: 'password1234', category: 'donor', is_admin: false })
+user_3 = User.create!({ email: 'host-b2@host.com', password: 'password1234', category: 'donor' })
 
-user_4 = User.create!({ email: 'test@gmail.com', password: 'test123', category: 'donor', is_admin: false })
+user_4 = User.create!({ email: 'test@gmail.com', password: 'test123', category: 'donor' })
 
-user_5 = User.create!({ email: 'user1@example.com', password: 'user123', category: 'hospital', is_admin: false })
+user_5 = User.create!({ email: 'user1@example.com', password: 'user123', category: 'hospital' })
 
-user_6 = User.create!({ email: 'user2@example.com', password: 'user456', category: 'donor', is_admin: false })
+user_6 = User.create!({ email: 'user2@example.com', password: 'user456', category: 'donor' })
 
-user_7 = User.create!({ email: 'user3@example.com', password: 'user789', category: 'donor', is_admin: false })
+user_7 = User.create!({ email: 'user3@example.com', password: 'user789', category: 'donor' })
 
-user_8 = User.create!({ email: 'user4@example.com', password: 'user000', category: 'hospital', is_admin: false })
+user_8 = User.create!({ email: 'user4@example.com', password: 'user000', category: 'hospital' })
 
 
 puts "creating donors"
@@ -55,14 +55,14 @@ hospital_7 = Hospital.create!({ user: user_7, hospital_name: 'Saint Mary Hospita
 hospital_8 = Hospital.create!({ user: user_8, hospital_name: 'Royal Hospital' })
 
 puts "creating centers"
-center_1 = Center.create!({ hospital: hospital_1, name: 'Blood Center 1', address: 'Leidschedam' })
-center_2 = Center.create!({ hospital: hospital_2, name: 'Blood Center 2', address: 'Schiedam' })
-center_3 = Center.create!({ hospital: hospital_3, name: 'Blood Center 3', address: 'Wateringen' })
-center_4 = Center.create!({ hospital: hospital_4, name: 'Blood Center 4', address: 'Delft' })
-center_5 = Center.create!({ hospital: hospital_5, name: 'Blood Center 5', address: 'Amsterdam' })
-center_6 = Center.create!({ hospital: hospital_6, name: 'Blood Center 6', address: 'Rotterdam' })
-center_7 = Center.create!({ hospital: hospital_7, name: 'Blood Center 7', address: 'The Hague' })
-center_8 = Center.create!({ hospital: hospital_8, name: 'Blood Center 8', address: 'Utrecht' })
+center_1 = Center.create!({ hospital: hospital_1, name: 'General Hospital', address: 'Leidschedam' })
+center_2 = Center.create!({ hospital: hospital_2, name: 'Children Hospital', address: 'Schiedam' })
+center_3 = Center.create!({ hospital: hospital_3, name: 'Veterans Hospital', address: 'Wateringen' })
+center_4 = Center.create!({ hospital: hospital_4, name: 'Kingston Hospital', address: 'Delft' })
+center_5 = Center.create!({ hospital: hospital_5, name: 'City Hospital', address: 'Amsterdam' })
+center_6 = Center.create!({ hospital: hospital_6, name: 'University Hospital', address: 'Rotterdam' })
+center_7 = Center.create!({ hospital: hospital_7, name: 'Saint Mary Hospital', address: 'The Hague' })
+center_8 = Center.create!({ hospital: hospital_8, name: 'Royal Hospital', address: 'Utrecht' })
 
 puts "creating days"
 
