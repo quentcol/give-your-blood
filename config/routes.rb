@@ -7,7 +7,11 @@ Rails.application.routes.draw do
   resources :centers do
     resources :reviews
   end
-  resources :appointments
+  resources :appointments do
+    member do
+      patch :cancel
+    end
+  end
   resources :schedules
   resources :days
 end

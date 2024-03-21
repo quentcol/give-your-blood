@@ -111,11 +111,14 @@
   border-radius: 5px;
 }
 
-.new-appointment-btn-show {
-  text-decoration: none;
-  color: white;
+.new-appointment-btn-show,
+.profile-link-edit,
+.profile-link-delete {
   background-color: #CD0E0E;
-  padding: 5px;
+  color: white;
+  border-style: none;
+  text-decoration: none;
+  padding: 2px 20px;
   border-radius: 5px;
 }
 
@@ -126,12 +129,4 @@
 
 .profile-details-text-black {
   color: black;
-}
-
-.profile-appointment-show {
-  text-decoration: none;
-  color: white;
-  background-color: #CD0E0E;
-  padding: 5px;
-  border-radius: 5px;
 }
