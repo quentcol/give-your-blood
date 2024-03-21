@@ -19,7 +19,6 @@ class AppointmentsController < ApplicationController
   def create
     @appointment = Appointment.new(appointment_params)
     @appointment.donor = current_user.donor
-    @appointment.status = 'pending'
     @appointment.person_in_charge = 'Center Staff'
     authorize @appointment
     if @appointment.save
