@@ -57,3 +57,51 @@ strong {
 .btn:hover {
   opacity: 0.8;
 }
+
+.show-appointment-actions {
+  display: flex;
+  justify-content: space-around;
+}
+
+.show-appointment-edit-btn,
+.show-appointment-back-btn {
+  text-decoration: none;
+  background-color: #CD0E0E;
+  color: white;
+  padding: 2px 20px;
+  border-radius: 5px;
+}
+
+.new-appointment-actions-btn {
+  display: flex;
+  justify-content: space-around;
+}
+
+.new-appointment-confirm,
+.new-appointment-cancel {
+  background-color: #CD0E0E;
+  color: white;
+  border-style: none;
+  text-decoration: none;
+  padding: 2px 20px;
+  border-radius: 5px;
+}
+
+.appointment-actions-edit {
+  display: flex;
+  justify-content: space-around;
+}
+
+.appointment-actions-save,
+.appointment-actions-cancel,
+.show-appointment-cancel-btn,
+.profile-appointment-delete,
+.profile-appointment-show,
+.profile-link-back {
+  background-color: #CD0E0E;
+  color: white;
+  border-style: none;
+  text-decoration: none;
+  padding: 2px 20px;
+  border-radius: 5px;
+}

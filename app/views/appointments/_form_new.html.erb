@@ -8,22 +8,17 @@
     <%= f.label :appointment_time, "Appointment Time:" %>
     <%= f.time_field :appointment_time, class: "form-control" %>
 
-    <%= f.label :person_in_charge, "Person in Charge:" %>
-    <%= f.select :person_in_charge, [["John Doe", "john_doe"], ["Jane Smith", "jane_smith"]], { prompt: "Select Person in Charge" }, { class: "form-control" } %>
-
-    <%= f.label :donor_id, "Donor:" %>
-    <%= f.collection_select :donor_id, Donor.all, :id, :last_name, { prompt: "Select Donor" }, { class: "form-control" } %>
+    <%= f.label :donor_id %>
+    <%= f.hidden_field :donor_id, value: current_user.donor.id %>
 
     <%= f.label :center_id, "Center:" %>
     <%= f.collection_select :center_id, Center.all, :id, :name, { prompt: "Select Center" }, { class: "form-control" } %>
 
 
-    <%= f.label :status, "Status:" %>
-    <%= f.select :status, [["Pending", "pending"], ["Completed", "completed"]], { prompt: "Select Status" }, { class: "form-control" } %>
-
-
-    <div class="actions-btn">
-      <%= f.submit "Confirm Appointment", class: "btn btn-danger" %>
+    <div class="new-appointment-actions-btn">
+      <%= f.submit "Confirm", class: "new-appointment-confirm" %>
+      <%= link_to "Cancel", donor_path(current_user.donor), class: "new-appointment-cancel" %>
+    </div>
     </div>
   <% end %>
 </div>

@@ -63,9 +63,13 @@
   transform: scale(1.05);
 }
 
-.actions {
-  text-align: center;
-  margin-bottom: 100px;
+#donor_submit {
+  background-color: #CD0E0E;
+  color: white;
+  border-style: none;
+  text-decoration: none;
+  padding: 2px 20px;
+  border-radius: 5px;
 }
 
 #map {
