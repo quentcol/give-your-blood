@@ -1,5 +1,5 @@
 <div class="container" style="padding: 50px;">
-  <%= form_with(model: @donor, url: donors_path, method: "patch") do |form| %>
+  <%= form_with(model: @donor, url: donor_path(@donor), method: "patch") do |form| %>
 
     <%= form.label :first_name, "First Name" %>
     <%= form.text_field :first_name, class: "form-control" %>
@@ -19,7 +19,7 @@
     <%= form.label :national_id, "National ID" %>
     <%= form.text_field :national_id, class: "form-control" %>
 
-    <div class="actions">
+    <div class="donor-profile-edit-actions">
       <%= form.button :submit, class: "btn-link" %>
     </div>
   <% end %>
