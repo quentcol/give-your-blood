@@ -28,13 +28,20 @@
               <%= 'Menu' %>
             </a>
 
-            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-               <% if current_user && current_user.donor %>
-                  <%= link_to "Profile", donor_path(current_user.donor), class: "dropdown-item" %>
-                <% else %>
-                  <%= link_to "Create Donor Profile", new_donor_path, class: "dropdown-item" %>
-                <% end %>
-                <%= link_to "Log out", destroy_user_session_path, data: { turbo_method: :delete }, class: "dropdown-item" %>
+           <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+              <% if current_user && current_user.donor %>
+                <%= link_to "Donor Profile", donor_path(current_user.donor), class: "dropdown-item" %>
+              <% else %>
+                <%= link_to "Create Donor Profile", new_donor_path, class: "dropdown-item" %>
+              <% end %>
+
+              <% if current_user && current_user.hospital %>
+                <%= link_to "Hospital Profile", hospital_path(current_user.hospital), class: "dropdown-item" %>
+              <% else %>
+                <%= link_to "Create Hospital Profile", new_hospital_path, class: "dropdown-item" %>
+              <% end %>
+
+              <%= link_to "Log out", destroy_user_session_path, data: { turbo_method: :delete }, class: "dropdown-item" %>
             </div>
           </li>
         <% else %>

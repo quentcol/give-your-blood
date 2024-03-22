@@ -1,7 +1,12 @@
-<h1><%= @hospital.hospital_name %></h1>
+<h1>Hospital Profile</h1>
+<% if @hospital %>
+  <p><strong>Hospital Name:</strong> <%= @hospital.hospital_name %></p>
+<% else %>
+  <p>No hospital profile found.</p>
+<% end %>
 
 <%= link_to 'Edit', edit_hospital_path(@hospital), class: 'btn btn-primary' %>
-<%= link_to 'Back', hospitals_path, class: 'btn btn-secondary' %>
+<%= link_to 'Back', root_path, class: 'btn btn-secondary' %>
 <%= link_to "Delete",
   hospital_path(@hospital), class: 'btn btn-secondary',
   data: {turbo_method: :delete, turbo_confirm: "Are you sure?" }
