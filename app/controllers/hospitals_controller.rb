@@ -4,7 +4,7 @@ class HospitalsController < ApplicationController
   before_action :set_hospital, only: [:show, :edit, :update, :destroy]
 
   def index
-    @hospitals = current_user.hospitals
+    @hospital = current_user.hospital
   end
 
   def show
@@ -29,10 +29,12 @@ class HospitalsController < ApplicationController
   end
 
   def edit
+    authorize @hospital
   end
 
   def update
     if @hospital.update(hospital_params)
+      authorize @hospital
       redirect_to @hospital, notice: 'Hospital was successfully updated.'
     else
       render :edit
@@ -41,7 +43,9 @@ class HospitalsController < ApplicationController
 
   def destroy
     @hospital.destroy
-    redirect_to hospitals_url, notice: 'Hospital was successfully destroyed.'
+    authorize @hospital
+    @hospital.destroy
+    redirect_to root_path, notice: 'Hospital was successfully destroyed.'
   end
 
   private

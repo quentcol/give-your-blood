@@ -19,10 +19,14 @@ class HospitalPolicy < ApplicationPolicy
   end
 
   def edit?
-    return update?
+    user.hospital == record
   end
 
   def update?
-    record.hospital_id == user.hospital.id
+    user.hospital == record
+  end
+
+  def destroy?
+    user.hospital?
   end
 end
