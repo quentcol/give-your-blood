@@ -9,7 +9,9 @@ Rails.application.routes.draw do
   end
   resources :appointments do
     member do
-      patch :cancel
+      get :cancel
+      get :approve
+      get :deny
     end
   end
   resources :schedules

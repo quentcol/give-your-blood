@@ -4,8 +4,4 @@ class Appointment < ApplicationRecord
 
   enum status: { pending: 0, approved: 1, denied: 2, canceled: 3 }, _prefix: true
 
-  def mark_as_canceled?
-    update(status: 'canceled')
-  end
-
 end
