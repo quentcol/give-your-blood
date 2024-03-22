@@ -7,7 +7,7 @@ class HospitalPolicy < ApplicationPolicy
   end
 
   def show?
-    true
+    return user.hospital.id = record.id
   end
 
   def new?

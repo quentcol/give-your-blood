@@ -1,13 +1,43 @@
-<h1>Hospital Profile</h1>
-<% if @hospital %>
-  <p><strong>Hospital Name:</strong> <%= @hospital.hospital_name %></p>
-<% else %>
-  <p>No hospital profile found.</p>
-<% end %>
+<h1 class="title"><%= @hospital.hospital_name %></h1>
 
-<%= link_to 'Edit', edit_hospital_path(@hospital), class: 'btn btn-primary' %>
-<%= link_to 'Back', root_path, class: 'btn btn-secondary' %>
-<%= link_to "Delete",
-  hospital_path(@hospital), class: 'btn btn-secondary',
-  data: {turbo_method: :delete, turbo_confirm: "Are you sure?" }
-%>
+<div class="donor-index">
+  <div class="donor-profile">
+    <div>
+      <h3 class="my-profile-text">Profile Page</h3>
+    </div>
+  </div>
+
+  <div class="profile_content">
+    <div class="profile_details">
+      <div class="profile-header">My Profile</div>
+      <div class="my_profile_text">
+        <div>
+          <p><strong>Name:</strong> <%= content_tag :span, @hospital.hospital_name, class: 'profile-details-text-black' %></p>
+        </div>
+        <div class="edit-donor-profile">
+          <div><%= link_to 'Edit', edit_hospital_path(@hospital), class: "profile-link-edit" %></div>
+          <div><%= link_to "Delete",
+                          hospital_path(@hospital),
+                          data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
+                          class: "profile-link-delete" %></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="show_appointments">
+      <div class="my-profile-div">
+        <h5>All your incoming appointments</h5>
+      </div>
+      <div class="appointment_grid">
+        <% @appointments %>
+      </div>
+    </div>
+
+    <div class="existing-appointment">
+      <div class="my-profile-div">
+        <h5>Your current appointments</h5>
+      </div>
+    </div>
+  </div>
+</div>
+
