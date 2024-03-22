@@ -130,3 +130,22 @@
 .profile-details-text-black {
   color: black;
 }
+
+.show_appointments {
+  background-color: white;
+  border-radius: 10px;
+  height: 350px;
+  overflow-y: auto;
+}
+
+.existing-appointment {
+  background-color: white;
+  border-radius: 10px;
+  height: 350px;
+  overflow-y: auto;
+  align-items: flex-end;
+  width: 76%;
+  margin-left: 410px;
+  margin-bottom: 28px;
+}
+
