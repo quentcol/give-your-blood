@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   resources :appointments do
     member do
       get :cancel
+      get :approve
+      get :deny
     end
   end
   resources :schedules

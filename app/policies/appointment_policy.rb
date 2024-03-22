@@ -29,6 +29,14 @@ class AppointmentPolicy < ApplicationPolicy
     true
   end
 
+  def approve?
+    true
+  end
+
+  def deny?
+    true
+  end
+
   def edit?
     user.donor == record.donor
   end

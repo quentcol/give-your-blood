@@ -64,6 +64,20 @@ class AppointmentsController < ApplicationController
     redirect_to donor_path(@appointment.donor), notice: 'Appointment was successfully canceled.'
   end
 
+  def approve
+    @appointment = Appointment.find(params[:id])
+    @appointment.update(status: 1)
+    authorize @appointment
+    redirect_to donor_path(@appointment.donor), notice: 'Appointment was successfully approved.'
+  end
+
+  def deny
+    @appointment = Appointment.find(params[:id])
+    @appointment.update(status: 2)
+    authorize @appointment
+    redirect_to donor_path(@appointment.donor), notice: 'Appointment was successfully denied.'
+  end
+
   private
 
   def set_appointment
