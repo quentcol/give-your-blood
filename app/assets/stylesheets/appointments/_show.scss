@@ -58,6 +58,86 @@ strong {
   opacity: 0.8;
 }
 
+.login1 {
+  color: #CD0E0E;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  display: flex;
+  margin: 10px;
+  justify-content: center;
+  padding-top: 10px;
+}
+
+.donor-new {
+  color: #CD0E0E;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  display: flex;
+  margin: 10px;
+  justify-content: center;
+  padding-top: 10px;
+}
+
+.form-inputs1{
+  width: 500px;
+}
+
+#donor_submit{
+  background-color: #CD0E0E;
+  color: white;
+  border-style: none;
+  text-decoration: none;
+  width: 50%;
+  padding: 20px 20px;
+  border-radius: 20px;
+  margin-left: 120px;
+  margin-top: 30px;
+}
+
+.login-signup{
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+  color: #CD0E0E;
+}
+
+.form-actions1 {
+  padding-left: 500px;
+  width: 85%;
+  padding-top: 20px;
+}
+
+.center-new{
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+  color: #CD0E0E;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.hospital-new {
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+  color: #CD0E0E;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.center-form{
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+  color: #CD0E0E;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.field{
+  width: 700px;
+}
+
+.center-action-button{
+padding-left: 250px;
+padding-top: 50px;
+}
+
 .show-appointment-actions {
   display: flex;
   justify-content: space-around;
