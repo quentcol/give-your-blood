@@ -17,6 +17,7 @@
 
 .schedule {
   flex: 1;
+  height: 400px;
 }
 
 
@@ -36,10 +37,12 @@
 }
 
 .schedule ul li {
-  margin-top: 40px;
-  margin-left: 70px;
+  margin-top: 30px;
 }
 
+.schedule ul {
+  line-height: 10px;
+}
 
 .button {
   display: inline-block;

@@ -57,16 +57,25 @@ class AppointmentsController < ApplicationController
   end
 
 
-
   def cancel
     @appointment = Appointment.find(params[:id])
+    @appointment.update(status: 3)
     authorize @appointment
+    redirect_to donor_path(@appointment.donor), notice: 'Appointment was successfully canceled.'
+  end
 
-    if @appointment.mark_as_canceled?
-      redirect_to donor_path(@appointment.donor), notice: 'Appointment was successfully cancelled.'
-    else
-      render :edit
-    end
+  def approve
+    @appointment = Appointment.find(params[:id])
+    @appointment.update(status: 1)
+    authorize @appointment
+    redirect_to donor_path(@appointment.donor), notice: 'Appointment was successfully approved.'
+  end
+
+  def deny
+    @appointment = Appointment.find(params[:id])
+    @appointment.update(status: 2)
+    authorize @appointment
+    redirect_to donor_path(@appointment.donor), notice: 'Appointment was successfully denied.'
   end
 
   private

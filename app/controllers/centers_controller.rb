@@ -14,7 +14,7 @@ class CentersController < ApplicationController
   def show
     authorize(@center)
 
-
+    @days = Day.all
     @center = Center.find(params[:id])
     @reviews = @center.reviews
     @review = Review.new

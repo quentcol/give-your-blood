@@ -4,7 +4,6 @@
     <div class="donor_profile_links">
       <div><%= link_to 'Back', root_path, class: "profile-link-back" %></div>
       <div><%= link_to 'New Appointment', new_appointment_path, class: 'new-appointment-btn-show' %></div>
-
     </div>
   </div>
 
@@ -61,7 +60,11 @@
 
                 <div class="detail">
                   <%= link_to 'Show', appointment, class: 'profile-appointment-show' %>
-                  <%= link_to 'Delete', appointment_path(appointment), data: { turbo_method: :delete, remote: true, confirm: 'Are you sure you want to delete this appointment?' }, class: 'profile-appointment-delete' %>
+                  <% if appointment.status != 3 %>
+                    <%= link_to 'Cancel', cancel_appointment_path(appointment), method: :post, data: { turbo_confirm: 'Are you sure you want to cancel this appointment?' }, class: 'profile-appointment-show' %>
+                  <% else %>
+                    <%= "Status: #{appointment.status}" %>
+                  <% end %>
                 </div>
               </div>
 
