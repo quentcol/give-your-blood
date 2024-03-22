@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   end
   resources :appointments do
     member do
-      patch :cancel
+      get :cancel
     end
   end
   resources :schedules

@@ -57,16 +57,11 @@ class AppointmentsController < ApplicationController
   end
 
 
-
   def cancel
     @appointment = Appointment.find(params[:id])
+    @appointment.update(status: 3)
     authorize @appointment
-
-    if @appointment.mark_as_canceled?
-      redirect_to donor_path(@appointment.donor), notice: 'Appointment was successfully cancelled.'
-    else
-      render :edit
-    end
+    redirect_to donor_path(@appointment.donor), notice: 'Appointment was successfully canceled.'
   end
 
   private
