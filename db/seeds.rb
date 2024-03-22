@@ -95,10 +95,10 @@ appointment_8 = Appointment.create!({ donor_id: Donor.last.id, appointment_date:
 
 review_1 = Review.create!({ donor: Donor.first, center_id: center_1.id, rating: 4, review_content: "Great experience!" })
 review_2 = Review.create!({ donor: Donor.all.sample, center_id: center_2.id, rating: 5, review_content: "Highly recommended!"})
-review_3 = Review.create!({ donor: Donor.all.sample, center_id: center_3.id, rating: 3, review_content: "Easy going Nurse." })
+review_3 = Review.create!({ donor: Donor.all.sample, center_id: center_3.id, rating: 3, review_content: "Easy going Nurses." })
 review_4 = Review.create!({ donor: Donor.all.sample, center_id: center_4.id, rating: 2, review_content: "long waiting List" })
 review_5 = Review.create!({ donor: Donor.all.sample, center_id: center_5.id, rating: 4, review_content: "Nice facilities." })
-review_6 = Review.create!({ donor: Donor.all.sample, center_id: center_6.id, rating: 5, review_content: "Close to my House" })
+review_6 = Review.create!({ donor: Donor.all.sample, center_id: center_6.id, rating: 5, review_content: "Closer to my House" })
 review_7 = Review.create!({ donor: Donor.all.sample, center_id: center_7.id, rating: 3, review_content: "Freindly Staff!" })
 review_8 = Review.create!({ donor: Donor.last, center_id: center_8.id, rating: 4, review_content: "Quick service!" })
 

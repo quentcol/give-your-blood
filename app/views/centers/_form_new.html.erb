@@ -1,4 +1,5 @@
-<%= form_with model: @center do |f| %>
+<div class="center-form">
+  <%= form_with model: @center do |f| %>
 
   <div class="field">
     <%= f.label :name, "Name" %>
@@ -14,8 +15,10 @@
     <%= f.label :hospital_id, "Hospital" %>
     <%= f.collection_select :hospital_id, Hospital.all, :id, :hospital_name, { include_blank: true }, class: "form-control" %>
   </div>
+</div>
 
-  <div class="actions">
-    <%= f.button :submit, class: "btn btn-primary" %>
+
+  <div class="center-action-button">
+    <%= f.button :submit, class: "btn btn-danger" %>
   </div>
 <% end %>
