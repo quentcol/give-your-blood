@@ -1,6 +1,6 @@
 class CentersController < ApplicationController
   before_action :set_center, only: [:show, :edit, :update, :destroy]
-
+  skip_before_action :authenticate_user!, only: [:index]
   def index
     @centers = policy_scope(Center) # Fetch only authorized centers
     @markers = @centers.geocoded.map do |center|

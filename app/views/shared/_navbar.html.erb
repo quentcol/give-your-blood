@@ -41,7 +41,7 @@
                 <%= link_to "Create Hospital Profile", new_hospital_path, class: "dropdown-item" %>
               <% end %>
 
-              <%= link_to "Log out", destroy_user_session_path, data: { turbo_method: :delete }, class: "dropdown-item" %>
+              <%= link_to "Log out", destroy_user_session_path,  class: "dropdown-item", data: { turbo_method: :delete } %>
             </div>
           </li>
         <% else %>
