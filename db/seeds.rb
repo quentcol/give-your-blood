@@ -55,7 +55,7 @@ hospital_7 = Hospital.create!({ user: user_7, hospital_name: 'Saint Mary Hospita
 hospital_8 = Hospital.create!({ user: user_8, hospital_name: 'Royal Hospital' })
 
 puts "creating centers"
-center_1 = Center.create!({ hospital: hospital_1, name: 'General Hospital', address: 'Leidschedam' })
+center_1 = Center.create!({ hospital: hospital_1, name: 'General Hospital', address: 'Naaldwijk' })
 center_2 = Center.create!({ hospital: hospital_2, name: 'Children Hospital', address: 'Schiedam' })
 center_3 = Center.create!({ hospital: hospital_3, name: 'Veterans Hospital', address: 'Wateringen' })
 center_4 = Center.create!({ hospital: hospital_4, name: 'Kingston Hospital', address: 'Delft' })
