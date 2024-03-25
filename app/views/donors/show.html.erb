@@ -31,7 +31,8 @@
       <div class="my-profile-div">
         <div>My appointments</div>
       </div>
-      <div class="appointment_grid">
+      <div>
+        <div class="appointment_grid">
           <% if @appointments.any? %>
             <% @appointments.each do |appointment| %>
               <div class="profile-appointment">
@@ -44,8 +45,12 @@
                   <%= appointment.appointment_time %>
                 </div>
                 <div class="detail">
-                  <strong>Person in Charge:</strong>
-                  <%= appointment.person_in_charge %>
+                  <strong>Center Name:</strong>
+                  <%= appointment.center.name %>
+                </div>
+                <div class="detail">
+                  <strong>Center Address:</strong>
+                  <%= appointment.center.address %>
                 </div>
                 <div class="detail">
                   <strong>Donor:</strong>
@@ -73,6 +78,10 @@
                 No appointments
             <% end %>
       </div>
+      
+      
+      </div>
+      
     </div>
   </div>
 </div>
