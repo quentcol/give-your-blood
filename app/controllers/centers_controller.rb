@@ -7,7 +7,8 @@ class CentersController < ApplicationController
       {
         lat: center.latitude,
         lng: center.longitude,
-        info_window: render_to_string(partial: "popup", locals: { center: center })
+        info_window: render_to_string(partial: "popup", locals: { center: center }),
+        marker_html: render_to_string(partial: "marker")
       }
     end
   end
