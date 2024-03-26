@@ -2,11 +2,20 @@
 
   <div class="show-title">
     <div class="centers-title-header">
-     <h4 class="centers-show-title"><%= @center.name %></h4>
-      <div><%= link_to 'New Appointment', new_appointment_path, class: 'new-appointment-btn-show' %></div>
+      <h4 class="centers-show-title"><%= @center.name %></h4>
+      <div>
+        <% if current_user && current_user.hospital? %>
+          <% hospital_center = current_user.center %>
+          <% if hospital_center %>
+            <div><%= link_to 'My Schedule', schedules_path, class: 'center-schedule-btn-show' %></div>
+          <% end %>
+        <% else %>
+          <%= link_to 'New Appointment', new_appointment_path, class: 'new-appointment-btn-show' %>
+        <% end %>
+      </div>
     </div>
 
-      <div class="show-address">
+    <div class="show-address">
       <h4 class="centers-show-address">
         <%= @center.address %>
       </h4>
@@ -14,51 +23,45 @@
   </div>
 
   <div class="map-schedule">
-
-      <div class="schedule">
-        <h4 class="schedule-title-text">Schedule</h4>
-        <ul>
-          <% @opening_time.each do |opening| %>
-           <li><strong><%= opening.day.name %></strong>  <%= "#{opening.opening_time.strftime('%H:%M')} - #{opening.closing_time.strftime('%H:%M')}" %></li>
+    <div class="schedule">
+      <h4 class="schedule-title-text">Schedule</h4>
+      <ul>
+        <% @opening_time.each do |opening| %>
+          <% if opening.opening_time && opening.closing_time %>
+            <li><strong><%= opening.day.name %></strong> <%= "#{opening.opening_time.strftime('%H:%M')} - #{opening.closing_time.strftime('%H:%M')}" %></li>
           <% end %>
-         </ul>
+        <% end %>
+      </ul>
+    </div>
+    <div class="centers-show-page-map" style="width: 100%; height: 100%; border-radius: 15px; position: relative;">
+      <div data-controller="map" id='map' data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>" data-map-markers-value="<%= @markers.to_json %>">
       </div>
-      <div class="centers-show-page-map" style="width: 100%px; height: 100%; border-radius: 15px; positin: relative;">
-        <div data-controller="map"
-        style="width: 100%; height: 100%; border-radius: 15px; positin: absolute;"
-        id='map'
-        data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
-        data-controller="map"
-        data-map-markers-value="<%= @markers.to_json %>"
-        data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-      </div>
-      </div>
-
+    </div>
   </div>
-
 
   <div data-controller="toggle">
   <div class="center-reviews-title" style="display: flex; align-items: flex-start;">
-    <h3>Center reviews: </h3> <button data-action="click->toggle#fire" class="add-review-btn">Add a review</button>
+    <h3>Center reviews: </h3>
+    <% unless current_user&.hospital? %>
+      <button data-action="click->toggle#fire" class="add-review-btn">Add a review</button>
+    <% end %>
   </div>
-
-
-    <div class="review-form" data-toggle-target="togglableElement">
-      <%= render "form_new_review", center: @center, user: current_user %>
-    </div>
-
+  <div class="review-form" data-toggle-target="togglableElement">
+    <%= render "form_new_review", center: @center, user: current_user %>
   </div>
+</div>
 
-
-  <div class="add-review">
-    <div class="display-user">
-      <% @reviews.each do |review| %>
-        <div class="review">
-          <div>Review by: <%= review.donor.last_name %></div>
-          <div>Review Date: <%= review.created_at.strftime("%Y-%m-%d") %></div>
-          <div>Rating: <%= review.rating %> <%= '⭐' * review.rating %></div>
-          <div><%= review.review_content %></div>
-        </div>
-      <% end %>
-    </div>
+<div class="add-review">
+  <div class="display-user">
+    <% @reviews.each do |review| %>
+      <div class="review">
+        <div>Review by: <%= review.donor.last_name %></div>
+        <div>Review Date: <%= review.created_at.strftime("%Y-%m-%d") %></div>
+        <div>Rating: <%= review.rating %> <%= '⭐' * review.rating %></div>
+        <div><%= review.review_content %></div>
+      </div>
+    <% end %>
   </div>
+</div>
+
+</div>

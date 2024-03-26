@@ -1,0 +1,34 @@
+.edit-hospital-schedule {
+  padding: 10px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.edit-schedule-header {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  font-size: 25px;
+}
+
+
+.new_schedule {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.create-schedule-new {
+  margin: 0;
+}
+
+.new-schedule-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  font-size: 25px;
+}

@@ -65,10 +65,8 @@
 
                 <div class="detail">
                   <%= link_to 'Show', appointment, class: 'profile-appointment-show' %>
-                  <% if appointment.status != 3 %>
+                  <% if appointment.status != "canceled" %>
                     <%= link_to 'Cancel', cancel_appointment_path(appointment), method: :post, data: { turbo_confirm: 'Are you sure you want to cancel this appointment?' }, class: 'profile-appointment-show' %>
-                  <% else %>
-                    <%= "Status: #{appointment.status}" %>
                   <% end %>
                 </div>
               </div>
@@ -78,10 +76,10 @@
                 No appointments
             <% end %>
       </div>
-      
-      
+
+
       </div>
-      
+
     </div>
   </div>
 </div>
