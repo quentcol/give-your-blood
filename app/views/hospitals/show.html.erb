@@ -82,6 +82,53 @@
         <div class="my-profile-div">
           <h5>Your current appointments</h5>
         </div>
+        <div class="appointment_grid">
+          <% current_date = Date.current %>
+          <% today_appointments = @appointments.select { |appointment| appointment.appointment_date == current_date } %>
+
+          <% if today_appointments.any? %>
+            <% today_appointments.each do |appointment| %>
+              <div class="profile-appointment">
+                <div class="detail">
+                  <strong>Date:</strong>
+                  <%= appointment.appointment_date %>
+                </div>
+                <div class="detail">
+                  <strong>Time:</strong>
+                  <%= appointment.appointment_time %>
+                </div>
+                <div class="detail">
+                  <strong>Center Name:</strong>
+                  <%= appointment.center.name %>
+                </div>
+                <div class="detail">
+                  <strong>Center Address:</strong>
+                  <%= appointment.center.address %>
+                </div>
+                <div class="detail">
+                  <strong>Donor:</strong>
+                  <%= appointment.donor.full_name %>
+                </div>
+                <div class="detail">
+                  <strong>Status:</strong>
+                  <span class="status-<%= appointment.status %>">
+                    <%= appointment.status.presence || 'N/A' %>
+                  </span>
+                </div>
+                <div class="detail">
+                  <%= link_to 'Show', appointment, class: 'profile-appointment-show' %>
+                  <% if appointment.status != 3 %>
+                    <%= link_to 'Cancel', cancel_appointment_path(appointment), method: :post, data: { turbo_confirm: 'Are you sure you want to cancel this appointment?' }, class: 'profile-appointment-show' %>
+                  <% else %>
+                    <%= "Status: #{appointment.status}" %>
+                  <% end %>
+                </div>
+              </div>
+            <% end %>
+          <% else %>
+            No appointments for today
+          <% end %>
+        </div>
       </div>
     </div>
 </div>

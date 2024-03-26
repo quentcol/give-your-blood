@@ -25,16 +25,22 @@ class SchedulesController < ApplicationController
 
   def create
     @schedule = Schedule.new(schedule_params)
-
     authorize @schedule
 
-    if @schedule.save
-      redirect_to schedule_path(@schedule), notice: 'Schedule was successfully created.'
-    else
+    # Set the center for the schedule based on your application logic
+    @schedule.center = current_user.center
+
+    if current_user.hospital.centers.includes(:schedules).where(schedules: { center_id: @schedule.center_id }).count >= 6
+      flash[:error] = 'You can only create up to 6 schedules per center.'
       render :new
+    else
+      if @schedule.save
+        redirect_to @schedule, notice: 'Schedule was successfully created.'
+      else
+        render :new
+      end
     end
   end
-
 
   def update
     authorize @schedule
@@ -48,8 +54,11 @@ class SchedulesController < ApplicationController
 
 
   def destroy
+    @schedule = Schedule.find(params[:id])
+    authorize @schedule # Add this line to perform authorization check
+  
     @schedule.destroy
-    redirect_to schedules_url, notice: 'Schedule was successfully destroyed.'
+    redirect_to schedule_path(@schedule), notice: 'Schedule was successfully destroyed.'
   end
 
   private
