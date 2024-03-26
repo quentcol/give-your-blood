@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'about_us/index'
   get 'center/index'
   devise_for :users
   root to: "pages#home"
@@ -16,4 +17,5 @@ Rails.application.routes.draw do
   end
   resources :schedules
   resources :days
+  get 'about_us', to: 'about_us#index'
 end
