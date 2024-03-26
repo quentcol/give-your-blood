@@ -61,21 +61,21 @@ class AppointmentsController < ApplicationController
     @appointment = Appointment.find(params[:id])
     @appointment.update(status: 3)
     authorize @appointment
-    redirect_to donor_path(@appointment.donor), notice: 'Appointment was successfully canceled.'
+    redirect_to donor_path(@appointment.donor), notice: 'Appointment has been canceled.'
   end
 
   def approve
     @appointment = Appointment.find(params[:id])
     @appointment.update(status: 1)
     authorize @appointment
-    redirect_to hospital_path(@appointment.hospital), notice: 'Appointment was successfully approved.'
+    redirect_to hospital_path(@appointment.center.hospital), notice: 'Appointment was successfully approved.'
   end
 
   def deny
     @appointment = Appointment.find(params[:id])
     @appointment.update(status: 2)
     authorize @appointment
-    redirect_to hospital_path(@appointment.hospital), notice: 'Appointment was successfully approved.'
+    redirect_to hospital_path(@appointment.center.hospital), notice: 'Appointment was denied.'
   end
 
   private
