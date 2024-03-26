@@ -83,7 +83,7 @@ Center.all.each do |center|
   Schedule.create!(center: center, day: wednesday, opening_time: '09:00', closing_time: '12:00')
   Schedule.create!(center: center, day: thursday, opening_time: '09:00', closing_time: '12:00')
   Schedule.create!(center: center, day: friday, opening_time: '09:00', closing_time: '12:00')
-  Schedule.create!(center: center, day: saturday, opening_time: 'Closed')
+  Schedule.create!(center: center, day: saturday, opening_time: '09:00', closing_time: '12:00')
   Schedule.create!(center: center, day: sunday, opening_time: 'closed')
 
 end

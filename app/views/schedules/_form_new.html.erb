@@ -16,10 +16,10 @@
   
   <div class="field">
     <%= form.label :center_id %>
-    <%= form.collection_select :center_id, Center.all, :id, :name, { include_blank: 'Select a center' }, { class: "form-control" } %>
+    <%= form.collection_select :center_id, current_user.hospital.centers, :id, :name, { include_blank: 'Select a center' }, { class: "form-control" } %>
   </div>
 
-  <div class="actions">
-    <%= form.button :submit, "Create Schedule", class: "btn btn-primary" %>
+  <div class="create-schedule-action">
+    <%= form.button :submit, "Create Schedule", class: "create-schedule-new" %>
   </div>
 <% end %>

@@ -1,0 +1,50 @@
+.schedules-index-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 30px;
+  padding: 5px 150px;
+}
+
+.schedule-index {
+  border: 1px solid #ccc;
+  background-color: white;
+  border-radius: 5px;
+  margin: 10px;
+  padding: 10px;
+  width: 300px;
+}
+
+.schedule-index-info {
+  margin-bottom: 10px;
+}
+
+.schedule-index-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.index-schedules-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.schedule-index-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40px;
+  font-size: 25px;
+}
+
+
+.schedule-index-btn-show,
+.schedule-index-btn-edit,
+.schedule-index-btn-delete {
+  text-decoration: none;
+  color: #CD0E0E;
+  padding: 2px 10px;
+  border-radius: 5px;
+}

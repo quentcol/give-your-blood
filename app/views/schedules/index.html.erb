@@ -1,30 +1,28 @@
-<h1>All Schedules</h1>
-<table>
-  <thead>
-    <tr>
-      <th>Day</th>
-      <th>Center</th>
-      <th>Opening Time</th>
-      <th>Closing Time</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @schedules.each do |schedule| %>
-      <tr>
-        <td><%= schedule.day.name %></td>
-        <td><%= schedule.center.name %></td>
-        <td><%= schedule.opening_time.strftime("%H:%M") %></td>
-        <td><%= schedule.closing_time.strftime("%H:%M") %></td>
-        <td><%= link_to 'Show', schedule %></td>
-        <td><%= link_to 'Edit', edit_schedule_path(schedule) %></td>
-        <td><%= link_to "Delete",
-          schedules_path(@schedule), class: 'btn btn-secondary',
-          data: {turbo_method: :delete, turbo_confirm: "Are you sure?" }
-        %></td>
-      </tr>
+<div class="index-schedules-container">
+  <div class="schedule-index-header">Your Schedules</div>
+
+  <div class="schedules-index-container">
+    <% current_user.hospital.centers.each do |center| %>
+      <% center.schedules.each do |schedule| %>
+        <div class="schedule-index">
+          <div class="schedule-index-info">
+            <div><strong>Day:</strong> <%= schedule.day.name %></div>
+            <div><strong>Center:</strong> <%= center.name %></div>
+            <div><strong>Opening Time:</strong> <%= schedule.opening_time.strftime("%H:%M") if schedule.opening_time %></div>
+            <div><strong>Closing Time:</strong> <%= schedule.closing_time.strftime("%H:%M") if schedule.closing_time %></div>
+          </div>
+          <div class="schedule-index-actions">
+            <%#= link_to 'Show', schedule, class: 'schedule-index-btn-show' %>
+            <%= link_to 'Edit', edit_schedule_path(schedule), class: 'schedule-index-btn-edit' %>
+            <%= link_to "Delete",
+                          schedule,
+                          data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
+                          class: "schedule-index-btn-delete" %>
+          </div>
+        </div>
+      <% end %>
     <% end %>
-  </tbody>
-</table>
-<br>
-<%= link_to 'New Schedule', new_schedule_path %>
+  </div>
+  <br>
+  <%= link_to 'New Schedule', new_schedule_path, class: 'schedule-index-btn-new' %>
+</div>
