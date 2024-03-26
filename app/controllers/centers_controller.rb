@@ -27,7 +27,9 @@ class CentersController < ApplicationController
     @markers = @center_array.geocoded.map do |center|
       {
         lat: center.latitude,
-        lng: center.longitude
+        lng: center.longitude,
+        info_window: render_to_string(partial: "popup", locals: { center: center }),
+        marker_html: render_to_string(partial: "marker")
       }
     end
 
