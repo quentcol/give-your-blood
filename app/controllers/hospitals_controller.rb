@@ -9,7 +9,7 @@ class HospitalsController < ApplicationController
 
   def show
     authorize @hospital
-    @appointments = Appointment.where(hospital_id: @hospital.id)
+    @appointments = Appointment.where(center_id: @hospital.centers)
   end
 
   def new
