@@ -1,3 +1,5 @@
+<% pending_appointments = @appointments.select {|appointment| appointment.status == "pending"} %>
+
 <div class="donor-index">
   <div class="donor-profile">
     <div>
@@ -31,50 +33,45 @@
 
       </div>
       <div class="appointment_grid">
-       <% if @appointments.any? %>
-            <% @appointments.each do |appointment| %>
-              <div class="profile-appointment">
-                <div class="detail">
-                  <strong>Date:</strong>
-                  <%= appointment.appointment_date %>
-                </div>
-                <div class="detail">
-                  <strong>Time:</strong>
-                   <%= appointment.appointment_time.strftime("%H:%M") %>
-                </div>
-                <div class="detail">
-                  <strong>Center Name:</strong>
-                  <%= appointment.center.name %>
-                </div>
-                <div class="detail">
-                  <strong>Center Address:</strong>
-                  <%= appointment.center.address %>
-                </div>
-                <div class="detail">
-                  <strong>Donor:</strong>
-                  <%= appointment.donor.full_name %>
-                </div>
-                <div class="detail">
-                  <strong>Status:</strong>
-                  <span class="status-<%= appointment.status %>">
-                    <%= appointment.status.presence || 'N/A' %>
-                  </span>
-                </div>
-
-                <div class="detail">
-                  <%= link_to 'Show', appointment, class: 'profile-appointment-show' %>
-                  <% if appointment.status != 3 %>
-                    <%= link_to 'Cancel', cancel_appointment_path(appointment), method: :post, data: { turbo_confirm: 'Are you sure you want to cancel this appointment?' }, class: 'profile-appointment-show' %>
-                  <% else %>
-                    <%= "Status: #{appointment.status}" %>
-                  <% end %>
-                </div>
+        <% if pending_appointments.any? %>
+          <% pending_appointments.each do |appointment| %>
+            <div class="profile-appointment">
+              <div class="detail">
+                <strong>Date:</strong>
+                <%= appointment.appointment_date %>
+              </div>
+              <div class="detail">
+                <strong>Time:</strong>
+                <%= appointment.appointment_time %>
+              </div>
+              <div class="detail">
+                <strong>Center Name:</strong>
+                <%= appointment.center.name %>
+              </div>
+              <div class="detail">
+                <strong>Center Address:</strong>
+                <%= appointment.center.address %>
+              </div>
+              <div class="detail">
+                <strong>Donor:</strong>
+                <%= appointment.donor.full_name %>
+              </div>
+              <div class="detail">
+                <strong>Status:</strong>
+                <span class="status-<%= appointment.status %>">
+                  <%= appointment.status.presence || 'N/A' %>
+                </span>
               </div>
 
-            <% end %>
-            <% else %>
-                No appointments
-            <% end %>
+              <div class="detail">
+                  <%= link_to 'Approve', approve_appointment_path(appointment), method: :post, data: { turbo_confirm: 'Are you sure you want to aprove this appointment?' }, class: 'profile-appointment-show' %>
+                  <%= link_to 'Deny', deny_appointment_path(appointment), method: :post, data: { turbo_confirm: 'Are you sure you want to deny this appointment?' }, class: 'profile-appointment-show' %>
+              </div>
+            </div>
+          <% end %>
+        <% else %>
+          <p>No appointments</p>
+        <% end %>
       </div>
     </div>
 
