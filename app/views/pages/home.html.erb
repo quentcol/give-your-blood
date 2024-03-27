@@ -6,12 +6,11 @@
         <h2>YOUR</h2>
         <h2>BLOOD</h2>
       </div>
-      <p class="title-p">Save lives, add your postal code below and find nearby locations to donate</p>
+      <p class="title-p">Save lives, find a nearby locations to donate</p>
    
       <div data-controller="search">
           <div class="input-group">
-              <input type="text" class="form-control" placeholder="City Name" aria-label="City Name" aria-describedby="button-addon2" data-target="search.cityInput">
-              <button class="btn btn-outline-secondary" type="button" id="searchButton" data-action="click->search#search">Search</button>
+              <%= link_to "Find us", centers_path, class: "home-page-btn"%>
           </div>
       </div>
     
