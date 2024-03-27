@@ -6,16 +6,15 @@
           <%= link_to "Home",root_path, class: "nav-link"%>
         </li>
         <li class="nav-item">
-          <% if current_user && current_user.hospital? %>
-            <% hospital_center = current_user.center %>
-            <% if hospital_center %>
-              <%= link_to "My Center", center_path(hospital_center), class: "nav-link"%>
+            <% if current_user && current_user.hospital? %>
+              <% hospital_center = current_user.center %>
+              <% if hospital_center %>
+                <%= link_to "My Center", center_path(hospital_center), class: "nav-link"%>
+              <% end %>
+            <% else %>
+              <%= link_to "Locations", centers_path, class: "nav-link"%>
             <% end %>
-          <% else %>
-            <%= link_to "Locations", centers_path, class: "nav-link"%>
-          <% end %>
-        </li>
-
+          </li>
       </ul>
     </div>
 
@@ -37,16 +36,19 @@
             </a>
 
            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <% if current_user && current_user.donor %>
-                <%= link_to "Donor Profile", donor_path(current_user.donor), class: "dropdown-item" %>
-              <% else %>
-                <%= link_to "Create Donor Profile", new_donor_path, class: "dropdown-item" %>
-              <% end %>
 
-              <% if current_user && current_user.hospital %>
-                <%= link_to "Hospital Profile", hospital_path(current_user.hospital), class: "dropdown-item" %>
+              <% if current_user.category == "donor" %>
+                <% if current_user && current_user.donor %>
+                  <%= link_to "Donor Profile", donor_path(current_user.donor), class: "dropdown-item" %>
+                <% else %>
+                  <%= link_to "Create Donor Profile", new_donor_path, class: "dropdown-item" %>
+                <% end %>
               <% else %>
-                <%= link_to "Create Hospital Profile", new_hospital_path, class: "dropdown-item" %>
+                <% if current_user && current_user.hospital %>
+                  <%= link_to "Hospital Profile", hospital_path(current_user.hospital), class: "dropdown-item" %>
+                <% else %>
+                  <%= link_to "Create Hospital Profile", new_hospital_path, class: "dropdown-item" %>
+                <% end %>
               <% end %>
 
               <%= link_to "Log out", destroy_user_session_path,  class: "dropdown-item", data: { turbo_method: :delete } %>
