@@ -12,6 +12,9 @@ class AppointmentsController < ApplicationController
 
   def new
     @donor = current_user.donor
+    unless current_user.donor
+      redirect_to new_donor_path, notice: 'Create a donor profile.'
+    end
     @appointment = Appointment.new
     authorize @appointment
   end
