@@ -1,5 +1,5 @@
 .footer {
-  position: relative;
+  //position: relative;
   height: 2.5rem;
   bottom: 0;
   left: 0;
@@ -10,4 +10,12 @@
   padding: 5px;
   font-size: 20px;
   font-weight: 400;
+}
+
+body {
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+min-height: 100vh;
+padding: 0;
 }
