@@ -1,9 +1,9 @@
 .background-pic {
   background-image: url('https://cdn.discordapp.com/attachments/1039170963708850216/1222612246031761448/About_Us_Background.png?ex=6616d962&is=66046462&hm=2cc1b8994072a57fcea11b9916cf099ae336a4cf889b2947f30114a7874fa9cd&');
   width: auto;
-  height:50%;
+  height: 200px;
   background-size: contain;
-  background-position: right;
+  background-position: center;
   background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
@@ -33,6 +33,7 @@
   font-size: 1.5rem;
   margin-top: 10px;
   display: flex;
+  padding: 25px;
   justify-content: center;
   color: black;
   font-family: 'Josefin Sans', sans-serif;
@@ -59,16 +60,25 @@
   margin: 0 auto;
 }
 
-.dev-h2, .about-us-h2 {
+.about-us-h2 {
   display: flex;
   justify-content: center;
   color: #CD0E0E;
   font-family: 'Gasoek one', sans-serif;
   font-weight: 80;
-  margin-bottom: 20px;
-  margin-top: 20px;
+  padding: 20px;
   text-align: left;
-  margin-bottom: auto;
+}
+
+.dev-h2 {
+  display: flex;
+  justify-content: center;
+  color: #CD0E0E;
+  font-family: 'Gasoek one', sans-serif;
+  font-weight: 80;
+  padding: 20px;
+  padding-top: 50px;
+  text-align: left;
 }
 
 .dev-link{
@@ -127,4 +137,20 @@
 
 .card-profile .card-product-infos {
   padding: 10px;
+}
+
+.test {
+  display: flex;
+}
+
+.about-us-text {
+  padding-left: 35px;
+  padding-right: 35px;
+  text-align: justify;
+
+}
+
+.picture-and-slogan{
+  padding-top: 40px;
+  padding-left: 400px;
 }
