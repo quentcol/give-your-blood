@@ -1,0 +1,130 @@
+.background-pic {
+  background-image: url('https://cdn.discordapp.com/attachments/1039170963708850216/1222612246031761448/About_Us_Background.png?ex=6616d962&is=66046462&hm=2cc1b8994072a57fcea11b9916cf099ae336a4cf889b2947f30114a7874fa9cd&');
+  width: auto;
+  height:50%;
+  background-size: contain;
+  background-position: right;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+.background-pic h1 {
+  color:#CD0E0E;
+  font-size: 2rem;
+  font-family: "Gasoek one", sans-serif;
+  margin-left: 15px;
+  text-align: left;
+}
+
+.about-us {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #F6EBE7;
+  margin-bottom: 30px;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.about-us-p{
+  font-size: 1.5rem;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  color: black;
+  font-family: 'Josefin Sans', sans-serif;
+  margin-left: 10px;
+
+}
+
+.team-p {
+  color: black;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 50;
+
+}
+
+
+.container-dev{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #F6EBE7;
+  margin-bottom: 30px;
+  align-items: left;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.dev-h2, .about-us-h2 {
+  display: flex;
+  justify-content: center;
+  color: #CD0E0E;
+  font-family: 'Gasoek one', sans-serif;
+  font-weight: 80;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  text-align: left;
+  margin-bottom: auto;
+}
+
+.dev-link{
+  display: inline-block;
+  margin-top: 20px;
+  text-decoration: none;
+  color: white;
+  background-color: #CD0E0E;
+  border-radius: 10px;
+  //display: flex;
+  height: 30px;
+  //justify-content: center;
+  //align-items: center;
+  padding: 5px 10px;
+  //width: 45%;
+}
+
+.dev-link:hover{
+  background-color: #1c1a1a;
+  transition: 0.3s;
+}
+
+.card-profile {
+  overflow: hidden;
+  //height: 120px;
+  background: rgb(237, 209, 209);
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  border-radius: 10px;
+}
+
+.card-profile img {
+  height: 300px;
+  //width: 120px;
+  width:300px;
+
+  object-fit: cover;
+}
+
+.card-profile h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-profile p {
+  font-size: 13px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 10px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.card-profile .card-product-infos {
+  padding: 10px;
+}

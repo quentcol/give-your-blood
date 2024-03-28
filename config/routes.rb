@@ -17,4 +17,5 @@ Rails.application.routes.draw do
   end
   resources :schedules
   resources :days
+  get 'about_us', to: 'about_us#index'
 end
