@@ -29,7 +29,7 @@
 
     <div class="show_appointments">
       <div class="my-profile-div">
-        <h5>All your incoming appointments</h5>
+        <h5>All your requested appointments</h5>
 
       </div>
       <div class="appointment_grid">
@@ -42,7 +42,7 @@
               </div>
               <div class="detail">
                 <strong>Time:</strong>
-                <%= appointment.appointment_time %>
+                <%= appointment.appointment_time.strftime("%H:%M") %>
               </div>
               <div class="detail">
                 <strong>Center Name:</strong>
@@ -80,14 +80,13 @@
   <div class="d-flex justify-content-end">
       <div class="existing-appointment">
         <div class="my-profile-div">
-          <h5>Your current appointments</h5>
+          <h5>Your upcomming appointments</h5>
         </div>
         <div class="appointment_grid">
           <% current_date = Date.current %>
-          <% today_appointments = @appointments.select { |appointment| appointment.appointment_date == current_date } %>
 
-          <% if today_appointments.any? %>
-            <% today_appointments.each do |appointment| %>
+          <% if @approved_appointments.any? %>
+            <% @approved_appointments.each do |appointment| %>
               <div class="profile-appointment">
                 <div class="detail">
                   <strong>Date:</strong>
@@ -95,7 +94,7 @@
                 </div>
                 <div class="detail">
                   <strong>Time:</strong>
-                  <%= appointment.appointment_time %>
+                <%= appointment.appointment_time.strftime("%H:%M") %>
                 </div>
                 <div class="detail">
                   <strong>Center Name:</strong>
@@ -117,10 +116,8 @@
                 </div>
                 <div class="detail">
                   <%= link_to 'Show', appointment, class: 'profile-appointment-show' %>
-                  <% if appointment.status != 3 %>
+                  <% if appointment.status != "canceled" %>
                     <%= link_to 'Cancel', cancel_appointment_path(appointment), method: :post, data: { turbo_confirm: 'Are you sure you want to cancel this appointment?' }, class: 'profile-appointment-show' %>
-                  <% else %>
-                    <%= "Status: #{appointment.status}" %>
                   <% end %>
                 </div>
               </div>

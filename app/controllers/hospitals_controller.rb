@@ -10,6 +10,7 @@ class HospitalsController < ApplicationController
   def show
     authorize @hospital
     @appointments = Appointment.where(center_id: @hospital.centers)
+    @approved_appointments = Appointment.where(center_id: @hospital.centers, status: "approved").where('appointment_date >= ?', Time.zone.now.beginning_of_day)
   end
 
   def new

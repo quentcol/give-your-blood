@@ -1,7 +1,13 @@
-<h1>Schedule Details</h1>
-<p><strong>Day:</strong> <%= @schedule.day.name %></p>
-<p><strong>Center:</strong> <%= @schedule.center.name %></p>
-<p><strong>Opening Time:</strong> <%= @schedule.opening_time.strftime("%H:%M") %></p>
-<p><strong>Closing Time:</strong> <%= @schedule.closing_time.strftime("%H:%M") %></p>
-<%= link_to 'Edit', edit_schedule_path(@schedule) %> |
-<%= link_to 'Back', schedules_path %>
+<div class="container-schedule">
+  <h1>Schedule Details</h1>
+  <div class="overvieuw-schedule">
+    <p><strong>Day:</strong> <%= @schedule.day.name %></p>
+    <p><strong>Center:</strong> <%= @schedule.center.name %></p>
+    <p><strong>Opening Time:</strong> <%= @schedule.opening_time.strftime("%H:%M") %></p>
+    <p><strong>Closing Time:</strong> <%= @schedule.closing_time.strftime("%H:%M") %></p>
+    <div class="buttons">
+      <%= link_to 'Edit', edit_schedule_path(@schedule) %> 
+      <%= link_to 'Back', schedules_path %>
+    </div>
+  </div>
+</div>
