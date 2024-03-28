@@ -71,8 +71,8 @@ tuesday = Day.create!(name: 'Tuesday')
 wednesday = Day.create!(name: 'Wednesday')
 thursday = Day.create!(name: 'Thursday')
 friday = Day.create!(name: 'Friday')
-saturday = Day.create!(name: 'saturday')
-sunday = Day.create!(name: 'sunday')
+saturday = Day.create!(name: 'Saturday')
+sunday = Day.create!(name: 'Sunday')
 
 
 puts "creating schedules"

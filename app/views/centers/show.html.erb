@@ -2,7 +2,7 @@
 
   <div class="show-title">
     <div class="centers-title-header">
-      <h4 class="centers-show-title"><%= @center.name %></h4>
+      <h4 class="centers-show-title"><%= @center.name.upcase %></h4>
       <div>
         <% if current_user && current_user.hospital? %>
           <% hospital_center = current_user.center %>
@@ -29,6 +29,8 @@
         <% @opening_time.each do |opening| %>
           <% if opening.opening_time && opening.closing_time %>
             <li><strong><%= opening.day.name %></strong> <%= "#{opening.opening_time.strftime('%H:%M')} - #{opening.closing_time.strftime('%H:%M')}" %></li>
+            <% else %>
+            <li><strong><%= opening.day.name %></strong><%= " closed" %></li>
           <% end %>
         <% end %>
       </ul>

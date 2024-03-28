@@ -25,10 +25,6 @@ class AppointmentPolicy < ApplicationPolicy
     end
   end
 
-  def cancel?
-    true
-  end
-
   def approve?
     true
   end
@@ -46,7 +42,11 @@ class AppointmentPolicy < ApplicationPolicy
   end
 
   def cancel?
-    user.present? && user.donor == record.donor
+    if user.donor
+      user.present? && user.donor == record.donor
+    else
+      true
+    end
   end
 
   def destroy?
