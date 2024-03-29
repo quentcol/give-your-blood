@@ -168,6 +168,12 @@ padding-top: 50px;
   border-radius: 5px;
 }
 
+.new-appointment-confirm:hover,
+.new-appointment-cancel:hover {
+  background-color: #ffffff;
+  color: #CD0E0E;
+}
+
 .appointment-actions-edit {
   display: flex;
   justify-content: space-around;
