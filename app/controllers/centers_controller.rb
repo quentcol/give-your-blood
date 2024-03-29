@@ -21,7 +21,7 @@ class CentersController < ApplicationController
     @reviews = @center.reviews
     @review = Review.new
 
-    @opening_time = Schedule.where(center_id: @center.id)
+    @opening_time = Schedule.where(center_id: @center.id).order(created_at: :asc)
     @reviews = Review.where(center_id: @center.id)
     @center_array = Center.where(id: @center.id)
     @markers = @center_array.geocoded.map do |center|
