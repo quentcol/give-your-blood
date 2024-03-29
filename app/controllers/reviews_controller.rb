@@ -16,8 +16,9 @@ class ReviewsController < ApplicationController
 
   def create
     @review = @center.reviews.new(review_params)
+    @review.donor = current_user.donor
     authorize @review
-    if @review.save
+    if @review.save!
       redirect_to center_path(@center), notice: 'Review was successfully created.'
     else
       render :show
