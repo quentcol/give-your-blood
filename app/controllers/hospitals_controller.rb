@@ -19,7 +19,7 @@ class HospitalsController < ApplicationController
   end
 
   def create
-    @hospital = Hospital.new(hospital_params)
+    @hospital = Hospital.new(hospital_params) 
     authorize @hospital
     @hospital.user = current_user
     if @hospital.save
