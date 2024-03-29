@@ -183,6 +183,16 @@ padding-top: 50px;
   color: white;
   border-style: none;
   text-decoration: none;
-  padding: 2px 20px;
+  padding: 10px 20px;
   border-radius: 5px;
+}
+
+.appointment-actions-save:hover,
+.appointment-actions-cancel:hover,
+.show-appointment-cancel-btn:hover,
+.profile-appointment-delete:hover,
+.profile-appointment-show:hover,
+.profile-link-back:hover {
+  background-color: #ffffff;
+  color: #CD0E0E;
 }

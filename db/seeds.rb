@@ -66,13 +66,13 @@ center_8 = Center.create!({ hospital: hospital_8, name: 'Royal Hospital', addres
 
 puts "creating days"
 
-monday = Day.create!(name: 'Monday')
-tuesday = Day.create!(name: 'Tuesday')
-wednesday = Day.create!(name: 'Wednesday')
-thursday = Day.create!(name: 'Thursday')
-friday = Day.create!(name: 'Friday')
-saturday = Day.create!(name: 'Saturday')
-sunday = Day.create!(name: 'Sunday')
+monday = Day.create!(name: 'Saturday')
+tuesday = Day.create!(name: 'Sunday')
+wednesday = Day.create!(name: 'Monday')
+thursday = Day.create!(name: 'Tuesday')
+friday = Day.create!(name: 'Wednesday')
+saturday = Day.create!(name: 'Thursday')
+sunday = Day.create!(name: 'Friday')
 
 
 puts "creating schedules"
