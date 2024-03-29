@@ -66,6 +66,7 @@ center_8 = Center.create!({ hospital: hospital_8, name: 'Royal Hospital', addres
 
 puts "creating days"
 
+
 monday = Day.create!(name: 'Monday')
 tuesday = Day.create!(name: 'Tuesday')
 wednesday = Day.create!(name: 'Wednesday')
