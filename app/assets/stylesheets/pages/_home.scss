@@ -34,10 +34,10 @@ body {
   border: solid 1px #F6EBE7;
 }
 .title-p{
-  color: #CD0E0E;
+  color: #3e3e3e;
   font-family: "Syne", sans-serif;
   font-weight: 100;
-  font-size: 20px;
+  font-size: 28px;
   margin-top: 20px;
   margin-bottom: 20px;
   text-align: center;
@@ -95,7 +95,6 @@ body {
   font-family: "Josefin Sans", sans-serif;
   font-weight: 700;
   margin-top: 20px;
-  margin-bottom: 20px;
   text-align: center;
   text-size-adjust: 20px;
 }
@@ -109,10 +108,10 @@ body {
   flex-direction: row;
   background-color: #F6EBE7;
   margin-bottom: 30px;
-  padding: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
   border: none;
   justify-content: space-between;
-  padding: 30px;
 }
 
 .card-css{
