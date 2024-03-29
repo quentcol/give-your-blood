@@ -43,7 +43,7 @@
 
   <div data-controller="toggle">
   <div class="center-reviews-title" style="display: flex; align-items: flex-start;">
-    <h3>Center reviews: </h3>
+    <h3 class="center-r">Center reviews:</h3>
     <% unless current_user&.hospital? %>
       <button data-action="click->toggle#fire" class="add-review-btn">Add a review</button>
     <% end %>
@@ -57,10 +57,10 @@
   <div class="display-user">
     <% @reviews.each do |review| %>
       <div class="review">
-        <div>Review by: <%= review.donor.last_name %></div>
-        <div>Review Date: <%= review.created_at.strftime("%Y-%m-%d") %></div>
-        <div>Rating: <%= review.rating %> <%= '⭐' * review.rating %></div>
-        <div><%= review.review_content %></div>
+        <div style="color: #CD0E0E;">Review by: <%= review.donor.last_name %></div>
+        <div style="color: #CD0E0E;">Review Date: <%= review.created_at.strftime("%Y-%m-%d") %></div>
+        <div style="color: #CD0E0E;">Rating: <%= review.rating %> <%= '⭐' * review.rating %></div>
+        <div style="color: #CD0E0E"><%= review.review_content %></div>
       </div>
     <% end %>
   </div>

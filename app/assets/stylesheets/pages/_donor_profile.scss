@@ -121,6 +121,14 @@
   text-decoration: none;
   padding: 2px 20px;
   border-radius: 5px;
+  padding: 10px;
+  transition: background-color 0.3s ease;
+  margin-right: 20px;
+}
+
+.new-appointment-btn-show:hover {
+  background-color: white;
+  color: #CD0E0E;
 }
 
 .profile-appointment {
