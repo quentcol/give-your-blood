@@ -34,7 +34,7 @@ body {
   border: solid 1px #F6EBE7;
 }
 .title-p{
-  color: #F6EBE7;
+  color: #CD0E0E;
   font-family: "Syne", sans-serif;
   font-weight: 100;
   font-size: 20px;
@@ -55,6 +55,7 @@ body {
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  padding: 45px;
 }
 
 .background-picture h2{
@@ -111,6 +112,7 @@ body {
   padding: 20px;
   border: none;
   justify-content: space-between;
+  padding: 30px;
 }
 
 .card-css{
@@ -128,7 +130,7 @@ body {
   background:#CD0E0E;
   color:white;
   font-family: "Syne", sans-serif;
-  font-weight: 650;
+  font-weight: bold;
   height: 75%;
   margin-bottom: 10px;
   text-align: center;
@@ -172,6 +174,14 @@ body {
   background-color: #CD0E18;
   color: white;
   text-decoration: none;
-  padding: 3px 10px;
+  padding: 5px 10px;
   border-radius: 5px;
+  font-size: large;
+  font-weight: bold;
+}
+
+.home-page-btn:hover {
+  background-color: #e07a7f;
+  color: white;
+  transition: 0.5s;
 }
