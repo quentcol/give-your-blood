@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_03_21_143025) do
+ActiveRecord::Schema[7.1].define(version: 2024_03_29_180421) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -65,7 +65,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_21_143025) do
     t.index ["user_id"], name: "index_hospitals_on_user_id"
   end
 
-  create_table "reviews", force: :cascade do |t|
+  code create_table "reviews", force: :cascade do |t|
     t.bigint "center_id", null: false
     t.bigint "donor_id", null: false
     t.float "rating"
