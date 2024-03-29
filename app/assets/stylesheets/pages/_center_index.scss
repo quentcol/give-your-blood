@@ -85,12 +85,16 @@
   flex-direction: column;
   height: 100%;
   justify-content: center;
+  font-size: larger;
 }
 
 .section-cards {
   width: 100%;
   display: flex;
   flex-direction: column;
+  p {
+    font-size: large
+  }
 }
 
 .center-index-cards {
