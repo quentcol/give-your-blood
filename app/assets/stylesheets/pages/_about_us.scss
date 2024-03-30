@@ -9,6 +9,7 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
+  margin-left: 100px;
 }
 .background-pic h1 {
   color:#CD0E0E;
@@ -97,7 +98,8 @@
 }
 
 .dev-link:hover{
-  background-color: #1c1a1a;
+  background-color: #ffffff;
+  color: #CD0E0E;
   transition: 0.3s;
 }
 

@@ -18,6 +18,7 @@
 .schedule {
   flex: 1;
   height: 400px;
+  font-size: large;
 }
 
 
@@ -33,7 +34,6 @@
   font-family: 'Gasoek One', sans-serif;
   color: #CD0E0E;
   font-weight: bold;
-
 }
 
 .schedule ul li {
@@ -119,6 +119,9 @@
 
 .centers-show-address {
   font-size: 20px;
+  color: #CD0E0E;
+  font-weight: bolder;
+
 }
 
 .map-schedule {
@@ -135,9 +138,19 @@
 .add-review-btn {
   border-style: none;
   text-decoration: underline;
-  color: #CD0E0E;
+  color: #f3f2f2;
   font-size: 20px;
   background-color: #F6EBE7;
+  text-decoration: none;
+  margin-left: 10px;
+  background-color: #d82929;
+  border-radius: 10px;
+}
+
+.add-review-btn:hover {
+  background-color: #f8f8f8;
+  color: #d82929;
+  transition: 0.5s ease;
 }
 
 .review-form-rating-text {
@@ -187,10 +200,11 @@
 }
 
 .review {
-  background-color: white;
+  background-color: #f9c8c8;
   border-radius: 5px;
   padding: 5px;
   margin-bottom: 10px;
+  width: 25%;
 }
 
 .centers-title-header {

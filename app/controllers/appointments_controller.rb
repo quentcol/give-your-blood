@@ -94,4 +94,11 @@ class AppointmentsController < ApplicationController
   def appointment_params
     params.require(:appointment).permit(:appointment_date, :appointment_time, :donor_id, :center_id)
   end
+
+  def user_not_authorized
+    flash[:alert] = "Appointment has been canceled"
+    redirect_to(request.referrer || root_path)
+  end
+
+
 end
