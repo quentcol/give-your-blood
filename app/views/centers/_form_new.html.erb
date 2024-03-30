@@ -15,10 +15,11 @@
     <%= f.label :hospital_id, "Hospital" %>
     <%= f.collection_select :hospital_id, Hospital.all, :id, :hospital_name, { include_blank: true }, class: "form-control" %>
   </div>
+
+   <div class="btn-center-action">
+    <%= f.button :submit, class: "btn-new-center" %>
+    <a href="/centers", class="link-back-to-centers">Back</a>
+  </div>
 </div>
 
-
-  <div class="center-action-button">
-    <%= f.button :submit, class: "btn btn-danger" %>
-  </div>
 <% end %>
