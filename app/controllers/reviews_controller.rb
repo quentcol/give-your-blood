@@ -15,7 +15,8 @@ class ReviewsController < ApplicationController
   end
 
   def create
-    @review = @center.reviews.new(review_params)
+    @center = Center.find(params[:center_id])
+    @review = @center.reviews.build(review_params)
     authorize @review
     if @review.save
       redirect_to center_path(@center), notice: 'Review was successfully created.'

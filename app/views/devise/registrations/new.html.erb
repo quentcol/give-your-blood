@@ -30,9 +30,10 @@
                 { class: 'form-select' } %>
     </div>
 
-  <div class="form-actions1">
-    <%= f.button :submit, "Sign up" %>
+  <div class="form-actions2">
+    <%= f.button :submit, "Sign up", class: "btn-login" %>
+    <a href="/users/sign_in" class="link-registration">Log in</a>
   </div>
 <% end %>
 </div>
-<%= render "devise/shared/links" %>
+
