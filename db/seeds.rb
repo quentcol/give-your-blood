@@ -28,6 +28,16 @@ user_7 = User.create!({ email: 'user3@example.com', password: 'user789', categor
 
 user_8 = User.create!({ email: 'user4@example.com', password: 'user000', category: 'hospital' })
 
+user_9 = User.create!({ email: 'user123@example.com', password: 'user1234', category: 'hospital' })
+
+user_10 = User.create!({ email: 'user5@example.com', password: 'user12345', category: 'hospital' })
+
+user_11 = User.create!({ email: 'user51@example.com', password: 'user123456', category: 'hospital' })
+
+user_12 = User.create!({ email: 'user6@example.com', password: 'user1234567', category: 'hospital' })
+
+user_13 = User.create!({ email: 'user7@example.com', password: 'user12345678', category: 'hospital' })
+
 
 puts "creating donors"
 donor_1 = { user: user_1, first_name: 'Iheb', last_name: "Laib", blood_type: 'A+', address: 'New York', birthdate: '1995-01-01' }
@@ -53,6 +63,12 @@ hospital_5 = Hospital.create!({ user: user_5, hospital_name: 'City Hospital' })
 hospital_6 = Hospital.create!({ user: user_6, hospital_name: 'University Hospital' })
 hospital_7 = Hospital.create!({ user: user_7, hospital_name: 'Saint Mary Hospital' })
 hospital_8 = Hospital.create!({ user: user_8, hospital_name: 'Royal Hospital' })
+hospital_9 = Hospital.create!({ user: user_9, hospital_name: 'General Hospital' })
+hospital_9 = Hospital.create!({ user: user_10, hospital_name: 'LUMC Hospital' })
+hospital_10 = Hospital.create!({ user: user_11, hospital_name: 'Erasmus Hospital' })
+hospital_11 = Hospital.create!({ user: user_12, hospital_name: 'Public Hospital' })
+hospital_12 = Hospital.create!({ user: user_13, hospital_name: 'Private Hospital' })
+hospital_13 = Hospital.create!({ user: user_13, hospital_name: 'Town Hospital' })
 
 puts "creating centers"
 #center_1 = Center.create!({ hospital: hospital_1, name: 'General Hospital', address: 'Naaldwijk' })
@@ -63,6 +79,13 @@ center_5 = Center.create!({ hospital: hospital_5, name: 'City Hospital', address
 center_6 = Center.create!({ hospital: hospital_6, name: 'University Hospital', address: 'Rotterdam' })
 center_7 = Center.create!({ hospital: hospital_7, name: 'Saint Mary Hospital', address: 'The Hague' })
 center_8 = Center.create!({ hospital: hospital_8, name: 'Royal Hospital', address: 'Utrecht' })
+center_9 = Center.create!({ hospital: hospital_9, name: 'General Hospital', address: 'Oosterpark 9 Amsterdam' })
+center_10 = Center.create!({ hospital: hospital_10, name: 'LUMC Hospital', address: 'Jan Tooropstraat 164' })
+center_11 = Center.create!({ hospital: hospital_11, name: 'Erasmus Hospital', address: 'Statenjachtstraat 1' })
+center_12 = Center.create!({ hospital: hospital_12, name: 'Public Hospital', address: 'Spuistraat 239' })
+center_13 = Center.create!({ hospital: hospital_13, name: 'Private Hospital', address: 'Meibergdreef 9' })
+
+
 
 puts "creating days"
 
